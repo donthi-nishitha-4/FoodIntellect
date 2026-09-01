@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Sodium Benzoate
+Category: Preservative / Antimicrobial
+Function: Inhibits growth of mold, yeast, and bacteria in acidic food products.
+Description: Sodium benzoate is the sodium salt of benzoic acid. It is most effective in acidic environments (pH below 4.5) and is commonly added to carbonated beverages, fruit juices, pickles, salad dressings, and condiments.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan, Vegetarian, Kosher.
+Health Effects & Notes: Designated as E211. When combined with Vitamin C (Ascorbic Acid) under heat and light, it can form trace amounts of benzene. Controlled strictly below NFR safety limits.

@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Soy Lecithin
+Category: Emulsifier
+Function: Prevents crystallization, stabilizes emulsions, reduces viscosity in chocolate.
+Description: Soy lecithin is a byproduct of soybean oil processing. In chocolate manufacturing, adding 0.3% to 0.5% soy lecithin reduces cocoa butter requirements while maintaining flowability and smooth mouthfeel.
+Allergen Information: Allergen Warning - Contains Soy (for individuals with severe soybean protein allergy, highly refined soy lecithin usually contains negligible protein).
+Dietary Considerations: Vegan, Halal, Kosher. Non-GMO variants exist.
+Health Effects & Notes: Widely accepted food additive (E322) used across processed foods.

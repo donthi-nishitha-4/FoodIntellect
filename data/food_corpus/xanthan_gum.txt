@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Xanthan Gum
+Category: Thickener / Stabilizer / Hydrocolloid
+Function: Increases liquid viscosity, prevents phase separation, provides gluten-free dough elasticity.
+Description: Produced by aerobic fermentation of glucose or sucrose by Xanthomonas campestris bacteria. Widely used in salad dressings, gluten-free baking, sauces, and ice creams.
+Allergen Information: Produced using corn, soy, or wheat substrate; minimal residual protein.
+Dietary Considerations: Vegan, Vegetarian, Gluten-free essential ingredient.
+Health Effects & Notes: E415. Soluble dietary fiber; safe at normal consumption levels.

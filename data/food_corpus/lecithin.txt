@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Lecithin
+Category: Emulsifier / Phospholipid
+Function: Emulsification, texture improvement, moisture retention.
+Description: Lecithin is a natural fatty substance found in plant and animal tissues, most commonly extracted from soybeans, sunflower seeds, or egg yolks. It is widely used in chocolate, margarine, baked goods, and infant formula to blend oil and water components smoothly.
+Allergen Information: May be derived from Soy or Eggs. Soy lecithin requires allergen disclosure in standard labeling if derived from unrefined soy oil.
+Dietary Considerations: Vegan when derived from Soy or Sunflower; Vegetarian.
+Health Effects & Notes: Generally Recognized As Safe (GRAS) by FDA and EFSA. Supports brain health as a source of choline.

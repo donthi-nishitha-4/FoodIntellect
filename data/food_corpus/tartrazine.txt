@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Tartrazine (FD&C Yellow No. 5)
+Category: Synthetic Colorant
+Function: Provides lemon-yellow color to drinks, candies, processed chips, and sauces.
+Description: Synthetic azo dye soluble in water. Used widely in food, pharmaceuticals, and cosmetics.
+Allergen Information: Can induce pseudo-allergic hives or respiratory reactions in aspirin-sensitive individuals.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: E102. Mandatory warning label in EU regarding potential impact on activity and attention in children.

@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Titanium Dioxide
+Category: Opacifier / White Pigment
+Function: Provides bright opacity, whiteness, and shine to confectioneries, cake frostings, and gums.
+Description: Naturally occurring oxide of titanium (TiO2). Insoluble mineral powder with extremely high refractive index.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: E171. Banned as a food additive in the European Union (EU) due to genotoxicity concerns regarding nanoparticle accumulation.

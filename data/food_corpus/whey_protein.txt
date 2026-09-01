@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Whey Protein Concentrate (WPC)
+Category: Dairy Protein / Emulsifier
+Function: Protein fortification, gel formation, water binding in sports nutrition and bakery.
+Description: Co-product of cheese manufacturing, isolated from liquid whey. WPC-80 contains 80% protein with small amounts of dairy fat and lactose.
+Allergen Information: MAJOR ALLERGEN - Contains Milk (Whey Protein & Lactose).
+Dietary Considerations: Vegetarian; NOT VEGAN.
+Health Effects & Notes: High biological value protein rich in branched-chain amino acids (BCAAs) like leucine.

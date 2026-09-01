@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Monosodium Glutamate (MSG)
+Category: Flavor Enhancer / Umami Agent
+Function: Enhances savory umami flavor profile, reduces required sodium level by up to 30%.
+Description: Sodium salt of glutamic acid, an abundant non-essential amino acid. Produced commercially by bacterial fermentation of sugar beet, sugar cane, or corn molasses.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: E621. Extensively evaluated by WHO, FDA, and EFSA; designated as safe. Mild sensitivity in rare individuals.

@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Ascorbic Acid (Vitamin C)
+Category: Antioxidant / Nutrient / Flour Improver
+Function: Prevents oxidation and browning, fortifies food with Vitamin C, strengthens bread dough gluten network.
+Description: Ascorbic acid is a water-soluble essential vitamin and potent antioxidant. It is added to fruit juices, cured meats (to prevent nitrosamine formation), and commercial bread baking.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: E300. Essential human micronutrient preventing scurvy and supporting immune function.

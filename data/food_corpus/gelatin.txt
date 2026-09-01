@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Gelatin
+Category: Gelling Agent / Thickener / Clarifier
+Function: Thermoreversible gelation, foaming, mouthfeel enhancer in gummies and marshmallows.
+Description: Protein substance derived by partial hydrolysis of collagen extracted from animal skin, bones, and connective tissue (pork, beef, or fish).
+Allergen Information: Animal protein; fish gelatin requires fish allergen labeling.
+Dietary Considerations: NOT VEGAN / NOT VEGETARIAN. Requires Halal/Kosher certification (Beef/Fish derived).
+Health Effects & Notes: Rich in amino acids glycine and proline.

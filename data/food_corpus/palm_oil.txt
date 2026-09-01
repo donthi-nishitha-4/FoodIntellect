@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Palm Oil / Palm Olein
+Category: Fat / Vegetable Oil
+Function: Provides solid fat structure at room temperature without hydrogenation (trans-fat free).
+Description: Edible vegetable oil derived from the mesocarp of the fruit of oil palms (Elaeis guineensis). Used in shortenings, margarines, biscuits, instant noodles, and chocolate spreads.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: High saturated fatty acid content (~50% palmitic acid); environmental sustainability concerns regarding deforestation.

@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: High Fructose Corn Syrup (HFCS)
+Category: Sweetener / Carbohydrate
+Function: Sweetening agent, browning enhancer, humectant for baked goods.
+Description: HFCS is produced from corn starch that has been processed by glucose isomerase to convert a portion of its glucose into fructose. HFCS-55 (55% fructose, 42% glucose) has sweetening parity with liquid sucrose and is heavily used in sodas, cereals, and processed snacks.
+Allergen Information: Corn-derived. Low risk for corn allergy.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: High intake is strongly linked to obesity, metabolic syndrome, non-alcoholic fatty liver disease, and type-2 diabetes due to rapid hepatic fructose processing.

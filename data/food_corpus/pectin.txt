@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Pectin
+Category: Gelling Agent / Thickener
+Function: Forms heat-reversible gels in high-sugar acidic environments.
+Description: Structural heteropolysaccharide extracted from citrus peels or apple pomace. Primary gelling ingredient in fruit jams, jellies, marmalades, and gummy confections.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan gelatin alternative, Vegetarian, Kosher.
+Health Effects & Notes: E440. Soluble fiber beneficial for gut motility.

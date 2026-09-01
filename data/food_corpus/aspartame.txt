@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Aspartame
+Category: Artificial Sweetener
+Function: Intense sweetening agent (~200x sweeter than sugar) with low caloric value.
+Description: Aspartame is a methyl ester of a dipeptide composed of L-aspartic acid and L-phenylalanine. Used extensively in diet sodas, sugar-free chewing gum, and low-calorie desserts.
+Allergen Information: Warning required for Individuals with Phenylketonuria (PKU).
+Dietary Considerations: Vegetarian, Low-calorie.
+Health Effects & Notes: E951. Metabolized into aspartic acid, phenylalanine, and methanol. Must be avoided by individuals with PKU due to inability to metabolize phenylalanine.

@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Caffeine
+Category: Stimulant / Flavoring Agent
+Function: Central nervous system stimulation, adds pleasant mild bitterness in cola beverages and energy drinks.
+Description: Methylxanthine alkaloid naturally occurring in coffee beans, tea leaves, guarana, and cocoa beans. Also produced synthetically for soda and pre-workout formulas.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: Enhances alertness. Recommended daily limit: 400 mg for adults, lower for pregnant women and children.

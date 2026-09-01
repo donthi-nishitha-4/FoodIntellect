@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Potassium Sorbate
+Category: Preservative / Antifungal
+Function: Prevents mold and yeast spoilage in food and wine.
+Description: Potassium sorbate is the potassium salt of sorbic acid. It works by inactivating fungal enzymes. It is widely used in cheese, wine, yogurt, dried fruit, baked goods, and syrups without altering flavor profiles.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: E202. Recognized as safe with minimal toxicity when consumed within ADI limits.

@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Maltodextrin
+Category: Thickener / Bulking Agent / Carbohydrate
+Function: Improves texture, adds volume without intense sweetness, serves as a carrier for flavors and spice mixes.
+Description: Maltodextrin is a polysaccharide produced from vegetable starch (corn, wheat, tapioca, or potato) by partial hydrolysis. It digests rapidly and has a high glycemic index (GI 85-105).
+Allergen Information: If derived from wheat, it must disclose wheat source in some jurisdictions, though it is usually gluten-free.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: Rapidly spikes blood glucose levels; caution recommended for individuals with diabetes.

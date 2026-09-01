@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Citric Acid
+Category: Acidulant / Flavor Enhancer / Antioxidant
+Function: Provides sour taste, regulates pH acidity, acts as a natural preservative and chelating agent.
+Description: Citric acid is a weak organic acid found naturally in citrus fruits like lemons and limes. Commercially, it is produced by fermentation using Aspergillus niger mold on sugar sources. It is used in soft drinks, candies, jams, and canned foods.
+Allergen Information: Non-allergenic (mold proteins are filtered out in commercial processing).
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: E330. Essential intermediate in the Krebs citric acid cycle in human metabolism.

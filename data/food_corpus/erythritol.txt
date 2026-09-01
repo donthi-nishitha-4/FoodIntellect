@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Erythritol
+Category: Sugar Alcohol (Polyol) / Sweetener
+Function: Bulk sweetener (~70% sweet as sugar) with zero net calories and cooling mouthfeel.
+Description: Erythritol is a 4-carbon sugar alcohol produced naturally by yeast fermentation of corn glucose. It is absorbed in the small intestine and excreted unchanged in urine, avoiding digestive distress common with other polyols like sorbitol.
+Allergen Information: Non-allergenic.
+Dietary Considerations: Vegan, Keto-friendly, Diabetic-safe, Non-cariogenic (does not cause tooth decay).
+Health Effects & Notes: E968. Highest digestive tolerance among all sugar alcohols.

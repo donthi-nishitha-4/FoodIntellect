@@ -1,0 +1,8 @@
+[INGREDIENT KNOWLEDGE BASE]
+Ingredient Name: Carrageenan
+Category: Stabilizer / Gelling Agent
+Function: Binds proteins in dairy products, prevents whey separation in chocolate milk and ice cream.
+Description: Family of natural linear sulfated polysaccharides extracted from red edible seaweeds (Irish moss). Highly effective at stabilizing milk proteins (casein).
+Allergen Information: Seaweed-derived; non-allergenic.
+Dietary Considerations: Vegan, Vegetarian.
+Health Effects & Notes: E407. Food-grade degraded carrageenan is restricted due to potential gastrointestinal inflammation concerns in high doses.

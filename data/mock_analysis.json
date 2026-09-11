@@ -1,0 +1,84 @@
+{
+  "product": {
+    "product_id": "3017620422003",
+    "product_name": "Nutella Hazelnut Spread with Cocoa",
+    "brand": "Ferrero",
+    "barcode": "3017620422003",
+    "ingredients": [
+      "Sugar",
+      "Palm Oil",
+      "Hazelnuts",
+      "Skimmed Milk Powder",
+      "Fat-Reduced Cocoa",
+      "Soy Lecithin",
+      "Vanillin"
+    ],
+    "structured_ingredients": [
+      {
+        "name": "Sugar",
+        "function": "Sweetener",
+        "category": "Simple Sugar",
+        "allergen_flag": false,
+        "safety_rating": "Caution",
+        "description": "High caloric sweetener; primary ingredient by weight."
+      },
+      {
+        "name": "Palm Oil",
+        "function": "Fat / Texture",
+        "category": "Vegetable Oil",
+        "allergen_flag": false,
+        "safety_rating": "Caution",
+        "description": "High saturated fat content."
+      },
+      {
+        "name": "Hazelnuts",
+        "function": "Nut base / Flavor",
+        "category": "Tree Nut",
+        "allergen_flag": true,
+        "safety_rating": "Safe",
+        "description": "Major tree nut allergen (13%)."
+      }
+    ],
+    "nutrition": {
+      "energy_kcal": 539.0,
+      "fat_g": 30.9,
+      "saturated_fat_g": 10.6,
+      "sugars_g": 56.3,
+      "sodium_mg": 42.0,
+      "protein_g": 6.3,
+      "fiber_g": 3.0
+    },
+    "allergens": ["tree_nuts", "milk", "soy"],
+    "categories": ["Spreads", "Chocolate Spreads"],
+    "image_url": "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_en.429.400.jpg",
+    "source": "openfoodfacts"
+  },
+  "allergy_check": {
+    "user_id": "usr_test_001",
+    "product_id": "3017620422003",
+    "is_safe": false,
+    "matched_allergens": ["tree_nuts", "milk"],
+    "warning_level": "DANGER",
+    "explanation": "WARNING: This product contains Hazelnuts (Tree Nuts) and Skimmed Milk Powder which conflict with your profile allergy settings."
+  },
+  "recommendations": [
+    {
+      "product_id": "rec_001",
+      "product_name": "Organic Almond & Dark Cocoa Butter (No Added Sugar)",
+      "brand": "Naturals",
+      "reason": "Lower sugar content (-75%) and free from palm oil and dairy.",
+      "nutrient_improvements": {
+        "sugars": "-75%",
+        "saturated_fat": "-40%"
+      }
+    }
+  ],
+  "summary": "Nutella is an energy-dense chocolate hazelnut spread. Over 50% of its total weight consists of added sugar and palm oil. While hazelnuts offer small amounts of fiber and micronutrients, intake should be limited due to high saturated fat and sugar density.",
+  "health_score": 32,
+  "key_takeaways": [
+    "High sugar density: 56.3g per 100g",
+    "Contains major allergens: Hazelnuts (Tree Nut) & Skimmed Milk",
+    "High saturated fat from Palm Oil (10.6g per 100g)"
+  ],
+  "confidence_score": 0.98
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Palm Oil",
+    "aliases": ["palm fruit oil", "palmate", "palmitate", "elaeis guineensis"],
+    "function": "Fat / Shortening",
+    "category": "Vegetable Oil",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "High in saturated fatty acids (~50%). Linked to elevated LDL cholesterol if consumed in high quantities."
+  },
+  {
+    "name": "Soy Lecithin",
+    "aliases": ["lecithin (soy)", "e322", "soya lecithin"],
+    "function": "Emulsifier",
+    "category": "Food Additive",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "Common food emulsifier derived from soybeans. Contains trace soy proteins."
+  },
+  {
+    "name": "Maltodextrin",
+    "aliases": ["corn maltodextrin"],
+    "function": "Thickener / Bulking agent",
+    "category": "Carbohydrate Additive",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "High glycemic index carbohydrate (GI 85-105). Can cause rapid blood glucose spikes."
+  },
+  {
+    "name": "Monosodium Glutamate",
+    "aliases": ["msg", "e621", "sodium glutamate"],
+    "function": "Flavor Enhancer",
+    "category": "Food Additive",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Umami flavor enhancer. Recognized as safe by major food safety authorities."
+  },
+  {
+    "name": "High Fructose Corn Syrup",
+    "aliases": ["hfcs", "isoglucose", "glucose-fructose syrup"],
+    "function": "Sweetener",
+    "category": "Simple Sugar",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Caloric sweetener linked to increased risk of metabolic syndrome and hepatic steatosis when overconsumed."
+  }
+]

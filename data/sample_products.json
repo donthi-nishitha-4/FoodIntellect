@@ -1,0 +1,121 @@
+[
+  {
+    "product_id": "3017620422003",
+    "product_name": "Nutella Hazelnut Spread with Cocoa",
+    "brand": "Ferrero",
+    "barcode": "3017620422003",
+    "ingredients": [
+      "Sugar",
+      "Palm Oil",
+      "Hazelnuts",
+      "Skimmed Milk Powder",
+      "Fat-Reduced Cocoa",
+      "Soy Lecithin",
+      "Vanillin"
+    ],
+    "structured_ingredients": [
+      {
+        "name": "Sugar",
+        "function": "Sweetener",
+        "category": "Simple Sugar",
+        "allergen_flag": false,
+        "safety_rating": "Caution",
+        "description": "High caloric sweetener; primary ingredient by weight."
+      },
+      {
+        "name": "Palm Oil",
+        "function": "Fat / Texture",
+        "category": "Vegetable Oil",
+        "allergen_flag": false,
+        "safety_rating": "Caution",
+        "description": "High saturated fat content."
+      },
+      {
+        "name": "Hazelnuts",
+        "function": "Nut base / Flavor",
+        "category": "Tree Nut",
+        "allergen_flag": true,
+        "safety_rating": "Safe",
+        "description": "Major tree nut allergen (13%)."
+      },
+      {
+        "name": "Skimmed Milk Powder",
+        "function": "Dairy solid",
+        "category": "Dairy",
+        "allergen_flag": true,
+        "safety_rating": "Safe",
+        "description": "Contains lactose and milk protein."
+      },
+      {
+        "name": "Soy Lecithin",
+        "function": "Emulsifier",
+        "category": "Additive",
+        "allergen_flag": true,
+        "safety_rating": "Safe",
+        "description": "Soy-derived emulsifying agent."
+      }
+    ],
+    "nutrition": {
+      "energy_kcal": 539.0,
+      "fat_g": 30.9,
+      "saturated_fat_g": 10.6,
+      "sugars_g": 56.3,
+      "sodium_mg": 42.0,
+      "protein_g": 6.3,
+      "fiber_g": 3.0
+    },
+    "allergens": ["tree_nuts", "milk", "soy"],
+    "categories": ["Spreads", "Chocolate Spreads", "Sweet Spreads"],
+    "image_url": "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_en.429.400.jpg",
+    "source": "openfoodfacts"
+  },
+  {
+    "product_id": "7622210449283",
+    "product_name": "Oreo Original Chocolate Sandwich Cookies",
+    "brand": "Mondelez",
+    "barcode": "7622210449283",
+    "ingredients": [
+      "Wheat Flour",
+      "Sugar",
+      "Palm Oil",
+      "Fat-Reduced Cocoa Powder",
+      "Wheat Starch",
+      "Glucose-Fructose Syrup",
+      "Raising Agents (Potassium Carbonates, Ammonium Carbonates, Sodium Carbonates)",
+      "Salt",
+      "Soy Lecithin",
+      "Flavoring (Vanillin)"
+    ],
+    "structured_ingredients": [
+      {
+        "name": "Wheat Flour",
+        "function": "Grain base",
+        "category": "Cereal",
+        "allergen_flag": true,
+        "safety_rating": "Safe",
+        "description": "Contains gluten."
+      },
+      {
+        "name": "Soy Lecithin",
+        "function": "Emulsifier",
+        "category": "Additive",
+        "allergen_flag": true,
+        "safety_rating": "Safe",
+        "description": "Soy-derived emulsifier."
+      }
+    ],
+    "nutrition": {
+      "energy_kcal": 474.0,
+      "fat_g": 19.0,
+      "saturated_fat_g": 5.2,
+      "sugars_g": 38.0,
+      "sodium_mg": 290.0,
+      "protein_g": 5.3,
+      "fiber_g": 2.7
+    },
+    "allergens": ["gluten", "soy"],
+    "categories": ["Biscuits", "Snacks", "Cookies"],
+    "image_url": "https://images.openfoodfacts.org/images/products/762/221/044/9283/front_en.12.400.jpg",
+    "source": "openfoodfacts"
+  }
+]

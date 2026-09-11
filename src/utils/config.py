@@ -1,13 +1,15 @@
-# src/utils/config.py
 from pathlib import Path
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 import os
+
 from typing import Optional
 from dotenv import load_dotenv
 
 load_dotenv()
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(case_sensitive=True)
+
     PROJECT_ROOT: Path = Path(__file__).resolve().parents[2]
     DATA_DIR: Path = PROJECT_ROOT / "data"
     FOOD_CORPUS_DIR: Path = DATA_DIR / "food_corpus"
@@ -34,7 +36,5 @@ class Settings(BaseSettings):
     def DATABASE_URL(self) -> str:
         return f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
-    class Config:
-        case_sensitive = True
-
 settings = Settings()
+

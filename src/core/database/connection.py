@@ -260,3 +260,8 @@ def retrieve_hybrid(query_text, query_embedding, tenant_id="foodintellect", enti
         
     sorted_res = sorted(combined.items(), key=lambda x: x[1]["rrf_score"], reverse=True)
     return [(doc_id, data["content"], data["rrf_score"]) for doc_id, data in sorted_res[:k]]
+
+
+# Alias for backward/forward compatibility across modules
+get_db_connection = get_connection
+

@@ -72,3 +72,11 @@ def query_llm_with_provider(messages, temperature=0.1, max_retries=2, timeout=15
 def query_llm(messages, temperature=0.1, max_retries=2, timeout=15.0):
     return query_llm_with_provider(messages, temperature, max_retries, timeout)
 
+
+def failover_llm_call(prompt: str) -> str:
+    """Helper wrapper taking a string prompt and returning string response via failover LLM."""
+    messages = [{"role": "user", "content": prompt}]
+    content, _ = query_llm(messages)
+    return content
+
+

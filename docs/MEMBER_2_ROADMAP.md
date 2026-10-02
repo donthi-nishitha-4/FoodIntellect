@@ -43,27 +43,27 @@ Build a high-performance, resilient AI engine that parses raw OCR text into vali
 ---
 
 ### Phase 2 (Sprint 2, Days 4–7): PostgreSQL pgvector + pg_trgm Hybrid RRF Search
-- [ ] Connect `ai_engine/embeddings/vector_store.py` to PostgreSQL container on port `5445`.
-- [ ] Implement Reciprocal Rank Fusion (RRF) combining dense cosine vector distance and sparse trigram keyword search:
+- [x] Connect `ai_engine/embeddings/vector_store.py` to PostgreSQL container on port `5445`.
+- [x] Implement Reciprocal Rank Fusion (RRF) combining dense cosine vector distance and sparse trigram keyword search:
   $$RRF\_Score(d) = \sum_{m \in M} \frac{1}{k + r_m(d)}$$
-- [ ] Seed food corpus vector embeddings into `rag_documents` table using `sentence-transformers` (`all-MiniLM-L6-v2`).
+- [x] Seed food corpus vector embeddings into `rag_documents` table using `sentence-transformers` (`all-MiniLM-L6-v2`).
 - **Acceptance Criteria:** `VectorStore.hybrid_search("palm oil")` returns top 3 relevant evidence chunks within <150ms.
 
 ---
 
 ### Phase 3 (Sprint 3, Days 8–10): Grounded RAG Synthesizer & FastAPI Route Helpers
-- [ ] Create system and human prompts in `ai_engine/prompts/` (`ingredient_analysis.py`, `product_summary.py`).
-- [ ] Build `ai_engine/rag_pipeline.py`: Synthesize `ProductData` + retrieved evidence context into complete `AnalysisResponse` object (summary, health score 0–100, key takeaways).
-- [ ] Build `ai_engine/routes_analyze_helper.py`: Export clean helper function `execute_full_analysis(...)` for Member 3's gateway.
+- [x] Create system and human prompts in `ai_engine/prompts/` (`ingredient_analysis.py`, `product_summary.py`).
+- [x] Build `ai_engine/rag_pipeline.py`: Synthesize `ProductData` + retrieved evidence context into complete `AnalysisResponse` object (summary, health score 0–100, key takeaways).
+- [x] Build `ai_engine/routes_analyze_helper.py`: Export clean helper function `execute_full_analysis(...)` for Member 3's gateway.
 - **Acceptance Criteria:** `pytest tests/test_ai_engine.py` passes end-to-end with valid `AnalysisResponse` output.
 
 ---
 
 ### Phase 4 (Sprint 4, Days 11–14): RAGAS Quantitative Evaluation Suite
-- [ ] Build `ai_engine/evaluator.py` running RAGAS metrics:
+- [x] Build `ai_engine/evaluator.py` running RAGAS & CER/WER metrics:
   - **Faithfulness**: Verifies zero hallucination relative to retrieved context.
   - **Answer Correctness & Relevance**: Measures quality of health recommendations.
-- [ ] Conduct LLM failover load test (simulating Gemini rate limits to verify seamless Groq failover).
+- [x] Conduct LLM failover load test (simulating Gemini rate limits to verify seamless Groq failover).
 - **Deliverables for Project Presentation:** RAGAS Evaluation Scorecards, Vector Retrieval Latency Benchmarks, and Failover Resilience Log Demos.
 
 ---

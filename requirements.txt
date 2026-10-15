@@ -16,4 +16,5 @@ pytest>=8.1.1
 cross-encoder>=1.0.0
 opencv-python>=4.9.0
 pytesseract>=0.3.10
+easyocr>=1.7.0
 rapidfuzz>=3.6.0

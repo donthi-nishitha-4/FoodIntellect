@@ -66,30 +66,17 @@ Build a high-performance, resilient AI engine that parses raw OCR text into vali
 - [x] Conduct LLM failover load test (simulating Gemini rate limits to verify seamless Groq failover).
 - **Deliverables for Project Presentation:** RAGAS Evaluation Scorecards, Vector Retrieval Latency Benchmarks, and Failover Resilience Log Demos.
 
+### Phase 5: Team Collaboration Tasks (Supporting Member 1 & Member 3)
+#### 🤝 How Member 2 Assists Member 1 (Data & Ingestion Lead)
+- **Unstructured Text Standardization Helper:** Provide a batch routine using `LLMOCRCleaner` to convert raw OpenFoodFacts unstructured text fields (like `ingredients_text` string blobs) into standardized `IngredientInfo` objects for Member 1’s database.
+- **AI Semantic Tagging & Safety Categorization:** Provide an LLM helper function (`ai_engine/extraction/ingredient_tagger.py`) to automatically classify un-categorized ingredients into categories (*Emulsifier*, *Preservative*, *Sweetener*, *Artificial Color*) and assign safety flags (*Safe*, *Caution*, *High Sugar*).
+- **Corpus Embedding Maintenance Script:** Keep `scripts/ingest_food_corpus.py` updated so whenever Member 1 adds new raw food knowledge files into `data/food_corpus/`, they can be embedded into PostgreSQL `rag_documents` with one command.
 ---
-### PHASE 5: collaboration tasks Member 2 can provide to assist Member 1 and Member 3
-#### How Member 2 Can Assist Member 1 (Data & Ingestion Lead)
-- **Unstructured Text Standardization Helper**
-
-- Provide a batch routine using LLMOCRCleaner to convert raw OpenFoodFacts unstructured text fields (like ingredients_text string blobs) into standardized IngredientInfo objects for Member 1’s database.
-- **AI Semantic Tagging & Safety Categorization**
-
-- Provide an LLM helper function (ai_engine/extraction/ingredient_tagger.py) to automatically classify un-categorized ingredients into categories (Emulsifier, Preservative, Sweetener, Artificial Color) and assign safety flags (Safe, Caution, High Sugar).
-- **Corpus Embedding Maintenance Script**
-
-- Keep scripts/ingest_food_corpus.py updated so whenever Member 1 adds new raw food knowledge files into data/food_corpus/, they can be embedded into PostgreSQL rag_documents with one command.
-
-#### How Member 2 Can Assist Member 3 (FastAPI Gateway & Frontend Lead)
--**Ready-to-Mount FastAPI APIRouter (app/routers/analyze.py)**
-- Create a pre-configured FastAPI APIRouter module for /api/v1/analyze and /api/v1/ocr/clean with complete request validation and error handling, allowing Member 3 to mount it in main.py with zero boilerplate.
-- **LLM Provider Health & Failover Status Check Helper**
-
-- Build a lightweight health monitoring helper (check_llm_providers_status()) checking Gemini, Groq, and OpenRouter availability. Member 3 can expose this on /api/v1/health/llm to display active provider badges on the UI dashboard.
-- **Streaming AI Response Generator (Server-Sent Events)**
-
-- Provide a streaming synthesizer helper (stream_analysis_response(...)) so Member 3 can implement typewriter-style streaming summaries on the React/Web UI.
-- **Frontend Mock Fixtures**
-- Provide deterministic mock factory functions (get_sample_analysis_response()) so Member 3 can construct and style UI cards and charts without needing backend database services running.
+#### 🤝 How Member 2 Assists Member 3 (FastAPI Gateway & Frontend Lead)
+- **Ready-to-Mount FastAPI APIRouter (`app/routers/analyze.py`):** Create a pre-configured FastAPI `APIRouter` module for `/api/v1/analyze` and `/api/v1/ocr/clean` with complete request validation and error handling, allowing Member 3 to mount it in `main.py` with zero boilerplate.
+- **LLM Provider Health & Failover Status Check Helper:** Build a lightweight health monitoring helper (`check_llm_providers_status()`) checking Gemini, Groq, and OpenRouter availability. Member 3 can expose this on `/api/v1/health/llm` to display active provider badges on the UI dashboard.
+- **Streaming AI Response Generator (Server-Sent Events):** Provide a streaming synthesizer helper (`stream_analysis_response(...)`) so Member 3 can implement typewriter-style streaming summaries on the React/Web UI.
+- **Frontend Mock Fixtures:** Provide deterministic mock factory functions (`get_sample_analysis_response()`) so Member 3 can construct and style UI cards and charts without needing backend database services running.
 
 ## 🛠️ Key File Ownership
 - `ai_engine/extraction/ocr_cleaner.py`

@@ -67,12 +67,30 @@ def test_execute_full_analysis_helper():
 
 def test_evaluator_metrics():
     evaluator = RAGEvaluator()
-    cer = evaluator.calculate_cer("hello world", "helo world")
-    wer = evaluator.calculate_wer("hello world", "hello world")
-    assert 0.0 <= cer <= 1.0
-    assert wer == 0.0
 
-    scores = evaluator.evaluate_response("palm oil", "Palm oil contains saturated fat.", "Palm oil high sat fat.")
+    # Test faithfulness — fraction of response words grounded in context
+    faith = evaluator.faithfulness(
+        response="Palm oil contains saturated fat.",
+        context="Palm oil high saturated fat content."
+    )
+    assert 0.0 <= faith <= 1.0
+
+    # Test answer_relevance — Jaccard similarity between query and response
+    relevance = evaluator.answer_relevance(
+        query="palm oil",
+        response="Palm oil contains saturated fat."
+    )
+    assert 0.0 <= relevance <= 1.0
+
+    # Test evaluate_response — all 4 RAGAS metrics in one call
+    scores = evaluator.evaluate_response(
+        query="palm oil",
+        response="Palm oil contains saturated fat.",
+        context="Palm oil high sat fat.",
+    )
     assert "faithfulness" in scores
+    assert "answer_relevance" in scores
+    assert "context_recall" in scores
+    assert "context_precision" in scores
+    assert "mean_score" in scores
     assert scores["faithfulness"] > 0.0
-

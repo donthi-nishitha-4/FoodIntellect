@@ -10,7 +10,7 @@
   },
   {
     "name": "Soy Lecithin",
-    "aliases": ["lecithin (soy)", "e322", "soya lecithin"],
+    "aliases": ["lecithin (soy)", "e322", "soya lecithin", "sunflower lecithin"],
     "function": "Emulsifier",
     "category": "Food Additive",
     "allergen_flag": true,
@@ -19,7 +19,7 @@
   },
   {
     "name": "Maltodextrin",
-    "aliases": ["corn maltodextrin"],
+    "aliases": ["corn maltodextrin", "rice maltodextrin", "wheat maltodextrin"],
     "function": "Thickener / Bulking agent",
     "category": "Carbohydrate Additive",
     "allergen_flag": false,
@@ -28,7 +28,7 @@
   },
   {
     "name": "Monosodium Glutamate",
-    "aliases": ["msg", "e621", "sodium glutamate"],
+    "aliases": ["msg", "e621", "sodium glutamate", "monosodium l-glutamate"],
     "function": "Flavor Enhancer",
     "category": "Food Additive",
     "allergen_flag": false,
@@ -37,11 +37,371 @@
   },
   {
     "name": "High Fructose Corn Syrup",
-    "aliases": ["hfcs", "isoglucose", "glucose-fructose syrup"],
+    "aliases": ["hfcs", "isoglucose", "glucose-fructose syrup", "corn syrup high fructose"],
     "function": "Sweetener",
     "category": "Simple Sugar",
     "allergen_flag": false,
     "safety_rating": "Caution",
     "description": "Caloric sweetener linked to increased risk of metabolic syndrome and hepatic steatosis when overconsumed."
+  },
+  {
+    "name": "Sugar",
+    "aliases": ["sucrose", "cane sugar", "beet sugar", "refined sugar", "table sugar", "white sugar"],
+    "function": "Sweetener",
+    "category": "Simple Sugar",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Provides empty calories with no nutritional value. Excess consumption linked to obesity, type-2 diabetes, and dental caries."
+  },
+  {
+    "name": "Salt",
+    "aliases": ["sodium chloride", "sea salt", "rock salt", "iodized salt", "table salt"],
+    "function": "Preservative / Flavor Enhancer",
+    "category": "Mineral",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Essential mineral but excess sodium (>2.3 g/day) is associated with hypertension and cardiovascular disease."
+  },
+  {
+    "name": "Whole Wheat Flour",
+    "aliases": ["whole grain wheat flour", "wholemeal flour", "whole wheat", "wholewheat flour"],
+    "function": "Base Grain / Structure",
+    "category": "Whole Grain",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "Rich in dietary fiber, vitamins, and minerals. Contains gluten — not suitable for celiac patients."
+  },
+  {
+    "name": "Wheat Flour",
+    "aliases": ["refined wheat flour", "all-purpose flour", "plain flour", "enriched wheat flour", "bleached flour"],
+    "function": "Base Grain / Structure",
+    "category": "Refined Grain",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "Refined wheat flour stripped of bran and germ. Contains gluten. Lower fiber than whole wheat."
+  },
+  {
+    "name": "Skimmed Milk Powder",
+    "aliases": ["nonfat dry milk", "skim milk powder", "dried skimmed milk", "non fat milk powder"],
+    "function": "Dairy solid / Protein source",
+    "category": "Dairy",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "Contains lactose and milk proteins (casein, whey). Major allergen for lactose-intolerant individuals."
+  },
+  {
+    "name": "Hazelnuts",
+    "aliases": ["hazelnut", "filberts", "hazel nuts", "ground hazelnuts"],
+    "function": "Nut base / Flavor",
+    "category": "Tree Nut",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "Major tree nut allergen. Rich in healthy monounsaturated fats, vitamin E, and antioxidants."
+  },
+  {
+    "name": "Sodium Benzoate",
+    "aliases": ["e211", "benzoate of soda", "natrium benzoate"],
+    "function": "Preservative",
+    "category": "Chemical Preservative",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Antimicrobial preservative. Combined with vitamin C (ascorbic acid), it can form benzene — a known carcinogen."
+  },
+  {
+    "name": "Potassium Sorbate",
+    "aliases": ["e202", "sorbate of potassium"],
+    "function": "Preservative",
+    "category": "Chemical Preservative",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Widely used mold and yeast inhibitor in baked goods, dairy, and beverages. Considered safe at approved levels."
+  },
+  {
+    "name": "Sodium Nitrate",
+    "aliases": ["e251", "chile saltpeter", "nitrate of soda"],
+    "function": "Preservative / Color Fixative",
+    "category": "Chemical Preservative",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Used in cured meats to prevent bacterial growth. Can form nitrosamines (potential carcinogens) under high heat."
+  },
+  {
+    "name": "BHA",
+    "aliases": ["butylated hydroxyanisole", "e320", "bha antioxidant"],
+    "function": "Antioxidant / Preservative",
+    "category": "Synthetic Antioxidant",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Synthetic antioxidant to prevent rancidity. Listed as possibly carcinogenic to humans (IARC Group 2B)."
+  },
+  {
+    "name": "BHT",
+    "aliases": ["butylated hydroxytoluene", "e321", "bht antioxidant"],
+    "function": "Antioxidant / Preservative",
+    "category": "Synthetic Antioxidant",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Synthetic antioxidant used in fats and oils. Some animal studies suggest endocrine disruption at high doses."
+  },
+  {
+    "name": "Aspartame",
+    "aliases": ["e951", "nutrasweet", "equal", "aspartyl-phenylalanine-1-methyl ester"],
+    "function": "Artificial Sweetener",
+    "category": "Non-Caloric Sweetener",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "200x sweeter than sugar. Contains phenylalanine — contraindicated for PKU patients. IARC classified possibly carcinogenic (2B, 2023)."
+  },
+  {
+    "name": "Saccharin",
+    "aliases": ["e954", "sweet n low", "sodium saccharin", "soluble saccharin"],
+    "function": "Artificial Sweetener",
+    "category": "Non-Caloric Sweetener",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Oldest artificial sweetener. 300-500x sweeter than sugar. Bitter aftertaste at high concentrations."
+  },
+  {
+    "name": "Sucralose",
+    "aliases": ["e955", "splenda", "trichlorogalactosucrose"],
+    "function": "Artificial Sweetener",
+    "category": "Non-Caloric Sweetener",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "600x sweeter than sugar. Passes through the body largely unmetabolized. Considered safe by major health agencies."
+  },
+  {
+    "name": "Stevia",
+    "aliases": ["e960", "steviol glycosides", "rebaudioside a", "reb-a", "stevia extract"],
+    "function": "Natural Sweetener",
+    "category": "Non-Caloric Sweetener",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Plant-derived natural zero-calorie sweetener from Stevia rebaudiana. 200-300x sweeter than sugar."
+  },
+  {
+    "name": "Xylitol",
+    "aliases": ["e967", "birch sugar", "wood sugar"],
+    "function": "Sugar Alcohol Sweetener",
+    "category": "Sugar Alcohol",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Natural sugar alcohol with 40% fewer calories than sugar. Dental-friendly. Toxic to dogs — keep away from pets."
+  },
+  {
+    "name": "Sorbitol",
+    "aliases": ["e420", "glucitol", "d-sorbitol"],
+    "function": "Sugar Alcohol Sweetener / Humectant",
+    "category": "Sugar Alcohol",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "60% as sweet as sugar with fewer calories. Can cause digestive discomfort in large quantities (>50g/day)."
+  },
+  {
+    "name": "Carrageenan",
+    "aliases": ["e407", "irish moss extract", "carrageen"],
+    "function": "Thickener / Gelling Agent",
+    "category": "Food Additive",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Seaweed-derived thickener used in dairy alternatives and processed meats. Some studies link degraded form to inflammation."
+  },
+  {
+    "name": "Mono and Diglycerides",
+    "aliases": ["monoglycerides", "diglycerides", "e471", "glycerol monostearate", "partial glycerides"],
+    "function": "Emulsifier",
+    "category": "Food Additive",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Common emulsifiers derived from fats. May contain small amounts of trans fats not required to be labeled."
+  },
+  {
+    "name": "Tartrazine",
+    "aliases": ["e102", "fd&c yellow 5", "yellow 5", "ci 19140"],
+    "function": "Artificial Color",
+    "category": "Food Coloring",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Yellow synthetic azo dye. Linked to hyperactivity in children. Requires warning label in EU (Southampton study)."
+  },
+  {
+    "name": "Sunset Yellow",
+    "aliases": ["e110", "fd&c yellow 6", "yellow 6", "ci 15985"],
+    "function": "Artificial Color",
+    "category": "Food Coloring",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Orange-yellow synthetic azo dye. Part of the Southampton Six — linked to hyperactivity in children."
+  },
+  {
+    "name": "Caramel Color",
+    "aliases": ["e150", "e150a", "e150b", "e150c", "e150d", "caramel colouring"],
+    "function": "Artificial Color",
+    "category": "Food Coloring",
+    "allergen_flag": false,
+    "safety_rating": "Caution",
+    "description": "Widely used brown colorant in cola drinks, soy sauce, and baked goods. Class IV (e150d) contains 4-MEI, a possible carcinogen."
+  },
+  {
+    "name": "Citric Acid",
+    "aliases": ["e330", "lemon acid", "citric acid anhydrous"],
+    "function": "Acidulant / Preservative / Flavor Enhancer",
+    "category": "Organic Acid",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Naturally occurring acid found in citrus fruits. Widely used as an acidity regulator and natural preservative."
+  },
+  {
+    "name": "Ascorbic Acid",
+    "aliases": ["e300", "vitamin c", "l-ascorbic acid", "ascorbate"],
+    "function": "Antioxidant / Nutrient",
+    "category": "Vitamin",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Vitamin C. Acts as an antioxidant and dough conditioner in baked goods. Essential nutrient for humans."
+  },
+  {
+    "name": "Vanillin",
+    "aliases": ["artificial vanilla", "synthetic vanillin", "vanilla flavoring"],
+    "function": "Artificial Flavor",
+    "category": "Flavoring Agent",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Synthetic version of the primary compound in natural vanilla extract. Used as a cost-effective vanilla substitute."
+  },
+  {
+    "name": "Natural Vanilla Extract",
+    "aliases": ["vanilla extract", "pure vanilla extract", "vanilla bean extract"],
+    "function": "Natural Flavor",
+    "category": "Flavoring Agent",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Extract from Vanilla planifolia bean pods. Contains vanillin plus hundreds of flavor compounds."
+  },
+  {
+    "name": "Cocoa Powder",
+    "aliases": ["fat-reduced cocoa", "cocoa", "cacao powder", "unsweetened cocoa"],
+    "function": "Flavor / Coloring",
+    "category": "Whole Food",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Rich source of flavonoids and antioxidants. Processed with alkali (Dutched) cocoa has lower antioxidant content."
+  },
+  {
+    "name": "Sunflower Oil",
+    "aliases": ["sunflower seed oil", "refined sunflower oil", "high-oleic sunflower oil"],
+    "function": "Fat / Frying Medium",
+    "category": "Vegetable Oil",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "High in polyunsaturated fatty acids (linoleic acid). Good source of vitamin E. Stable for high-temperature cooking."
+  },
+  {
+    "name": "Canola Oil",
+    "aliases": ["rapeseed oil", "colza oil", "canola", "low erucic acid rapeseed"],
+    "function": "Fat / Frying Medium",
+    "category": "Vegetable Oil",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Low in saturated fat. Good source of omega-3 fatty acids (ALA). Heart-healthy cooking oil."
+  },
+  {
+    "name": "Peanuts",
+    "aliases": ["groundnuts", "peanut", "ground nuts", "arachis hypogaea"],
+    "function": "Protein Source / Nut",
+    "category": "Legume",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "One of the top 9 major food allergens. Can cause severe anaphylaxis. Rich in protein, niacin, and monounsaturated fats."
+  },
+  {
+    "name": "Eggs",
+    "aliases": ["whole egg", "egg", "dried egg", "egg powder", "egg solids", "albumen"],
+    "function": "Binder / Emulsifier / Structure",
+    "category": "Animal Product",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "Major food allergen. Rich in high-quality protein, choline, and fat-soluble vitamins (A, D, E, K)."
+  },
+  {
+    "name": "Milk",
+    "aliases": ["whole milk", "dairy", "full cream milk", "lactose", "milk solids", "cream"],
+    "function": "Dairy / Protein / Fat source",
+    "category": "Dairy",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "Major food allergen containing casein and whey proteins. Also contains lactose — problematic for lactose-intolerant individuals."
+  },
+  {
+    "name": "Wheat Starch",
+    "aliases": ["starch wheat", "native wheat starch", "modified wheat starch"],
+    "function": "Thickener / Texture Agent",
+    "category": "Refined Grain",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "Starch extracted from wheat. Contains gluten — avoid if celiac. Used as a thickener in sauces and baked goods."
+  },
+  {
+    "name": "Corn Starch",
+    "aliases": ["maize starch", "cornstarch", "modified corn starch", "corn flour"],
+    "function": "Thickener / Texture Agent",
+    "category": "Carbohydrate Additive",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Gluten-free thickener and texture agent extracted from corn. Used in sauces, puddings, and coatings."
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "aliases": ["baking soda", "e500", "bicarbonate of soda", "sodium hydrogen carbonate"],
+    "function": "Leavening Agent",
+    "category": "Raising Agent",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Common chemical leavening agent used in baked goods. Reacts with acids to produce CO2 for rise."
+  },
+  {
+    "name": "Whey Powder",
+    "aliases": ["whey", "dried whey", "whey protein", "sweet whey powder"],
+    "function": "Protein Supplement / Dairy Solid",
+    "category": "Dairy",
+    "allergen_flag": true,
+    "safety_rating": "Safe",
+    "description": "By-product of cheese manufacturing. Contains lactose and milk proteins — major dairy allergen."
+  },
+  {
+    "name": "Oats",
+    "aliases": ["rolled oats", "oatmeal", "avena sativa", "whole grain oats", "oat flakes"],
+    "function": "Whole Grain / Fiber Source",
+    "category": "Whole Grain",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Naturally gluten-free but frequently cross-contaminated with wheat in processing. Rich in beta-glucan fiber."
+  },
+  {
+    "name": "Rice Flour",
+    "aliases": ["rice starch", "white rice flour", "brown rice flour", "glutinous rice flour"],
+    "function": "Gluten-Free Base Grain",
+    "category": "Whole Grain",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Gluten-free flour alternative commonly used in gluten-free baking products."
+  },
+  {
+    "name": "Potassium Carbonate",
+    "aliases": ["e501", "pearl ash", "dipotassium carbonate", "potassium carbonates"],
+    "function": "Leavening Agent / Acidity Regulator",
+    "category": "Food Additive",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Alkaline salt used as a raising agent in baked goods and as an acidity regulator."
+  },
+  {
+    "name": "Ammonium Carbonate",
+    "aliases": ["e503", "ammonium bicarbonate", "ammonium carbonates", "baker's ammonia"],
+    "function": "Leavening Agent",
+    "category": "Raising Agent",
+    "allergen_flag": false,
+    "safety_rating": "Safe",
+    "description": "Traditional leavening agent used in cookies and crackers. Fully decomposes during baking, leaving no residue."
   }
 ]

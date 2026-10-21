@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Food Intellect</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Food Intellect</h1>
+
+    <p>
+        AI Powered Food Intelligence
+        and Alternatives Recommendation Platform
+    </p>
+
+
+    <div class="card">
+
+        <h2>Scan Product Using Barcode</h2>
+
+        <form id="barcodeForm">
+
+            <input
+                type="text"
+                id="barcode"
+                placeholder="Enter barcode"
+                required
+            >
+
+            <button type="submit">
+                Analyze Product
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Upload Food Label</h2>
+
+        <form id="imageForm">
+
+            <input
+                type="file"
+                id="foodImage"
+                accept="image/*"
+                required
+            >
+
+            <button type="submit">
+                Upload & Analyze
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="navigation">
+
+        <a href="/profile">
+            Profile
+        </a>
+
+        <a href="/history">
+            History
+        </a>
+
+    </div>
+
+</div>
+
+
+<script src="/static/js/app.js"></script>
+
+</body>
+
+</html>

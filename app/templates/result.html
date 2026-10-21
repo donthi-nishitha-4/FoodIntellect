@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Food Analysis</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Food Analysis Result</h1>
+
+    <div id="result">
+
+        Loading...
+
+    </div>
+
+    <br>
+
+    <a href="/">
+        ← Back to Home
+    </a>
+
+</div>
+
+
+<script>
+
+const data =
+    JSON.parse(
+        sessionStorage.getItem("analysis")
+    );
+
+
+if (!data) {
+
+    document.getElementById("result")
+        .innerHTML =
+        "<p>No analysis available.</p>";
+
+}
+else {
+
+    const a = data.analysis;
+
+    let html = "";
+
+    html +=
+        `<h2>${a.product_name}</h2>`;
+
+    html +=
+        `<h3>Overall Assessment</h3>`;
+
+    html +=
+        `<p>${a.overall_assessment}</p>`;
+
+
+    html +=
+        `<h3>Ingredient Analysis</h3>`;
+
+    html += "<ul>";
+
+    a.ingredient_analysis.forEach(
+        item => {
+
+            html += `
+                <li>
+                    <b>${item.ingredient}</b>
+                    -
+                    ${item.category}
+                    <br>
+                    ${item.explanation}
+                </li>
+            `;
+
+        }
+    );
+
+    html += "</ul>";
+
+
+    html +=
+        `<h3>Allergens</h3>`;
+
+    html +=
+        `<p>${a.allergens.join(", ")}</p>`;
+
+
+    html +=
+        `<h3>Health Summary</h3>`;
+
+    html +=
+        `<p>${a.health_summary}</p>`;
+
+
+    html +=
+        `<h3>Recommendation</h3>`;
+
+    html +=
+        `<p>${a.recommendation.message}</p>`;
+
+
+    document.getElementById("result")
+        .innerHTML = html;
+}
+
+</script>
+
+</body>
+
+</html>

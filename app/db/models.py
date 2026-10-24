@@ -1,28 +1,43 @@
-"""
-SQLAlchemy ORM Database Models (Member 3)
+from sqlalchemy import Column, Integer, String, Text, DateTime
+from datetime import datetime
 
-Defines relational database tables for products, user profiles, and scan logs.
-"""
-from typing import Optional
-import json
+from .session import Base
 
 
-class ProductModel:
-    """Mock DB model for Product persistence."""
+class User(Base):
 
-    def __init__(self, product_id: str, name: str, data_json: str):
-        self.product_id = product_id
-        self.name = name
-        self.data_json = data_json
+    __tablename__ = "users"
 
-    def to_dict(self):
-        return json.loads(self.data_json)
+    id = Column(Integer, primary_key=True, index=True)
+
+    name = Column(String(100))
+
+    email = Column(String(150), unique=True)
+
+    age = Column(Integer, nullable=True)
+
+    dietary_preference = Column(String(100), nullable=True)
+
+    allergies = Column(String(500), nullable=True)
 
 
-class UserProfileModel:
-    """Mock DB model for User Profile persistence."""
+class AnalysisHistory(Base):
 
-    def __init__(self, user_id: str, name: str, allergies_json: str):
-        self.user_id = user_id
-        self.name = name
-        self.allergies_json = allergies_json
+    __tablename__ = "analysis_history"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    user_id = Column(Integer)
+
+    product_name = Column(String(200))
+
+    barcode = Column(String(100), nullable=True)
+
+    ingredients = Column(Text, nullable=True)
+
+    analysis = Column(Text, nullable=True)
+
+    created_at = Column(
+        DateTime,
+        default=datetime.utcnow
+    )

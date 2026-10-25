@@ -2,19 +2,30 @@
 
 > **Project:** Food Intellect  
 > **Team:** 3 Members (33% / 33% / 33% Equal Workload Split)  
-> **Architecture Strategy:** Independent Parallel Development via Shared Contracts (`schemas/contracts.py`)
+> **Architecture Strategy:** Independent Parallel Development via Shared Contracts (`schemas/contracts.py`)  
+> **Current Status:** Functional MVP validated in WSL; merged to `main`; test evidence available from the latest repository validation run.
 
 ---
 
 ## 📌 Master Workstream & Individual Member Roadmaps
 
-Click on any team member's roadmap to view their phase-by-phase sprint tasks, deliverables, and acceptance criteria:
+| Workstream | Team Member | Domain & Ownership | Detailed Roadmap Document | Current State |
+| :--- | :--- | :--- | :--- | :--- |
+| **Member 1** | Data, Ingestion & Recommender | OCR pipeline, ingredient KB, recommender | 📖 [docs/MEMBER_1_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_1_ROADMAP.md) | ✅ Core work implemented |
+| **Member 2** | AI Engine & RAG Lead | LLM cleaner, vector retrieval, RAG synthesis, evaluator | 📖 [docs/MEMBER_2_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_2_ROADMAP.md) | ✅ Core work implemented |
+| **Member 3** | App Gateway & Frontend | FastAPI app, allergy engine, DB/session, UI integration | 📖 [docs/MEMBER_3_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_3_ROADMAP.md) | ✅ Functional gateway and safety logic |
 
-| Workstream | Team Member | Domain & Ownership | Detailed Roadmap Document |
-| :--- | :--- | :--- | :--- |
-| **Member 1** | Data, Ingestion & Recommender | Open Food Facts API, OpenCV Preprocessing, EasyOCR Engine, Ingredient KB Matcher & Healthier Alternative Recommender | 📖 [docs/MEMBER_1_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_1_ROADMAP.md) |
-| **Member 2** | AI Engine & RAG Lead | LLM OCR Text Cleaner, PostgreSQL `pgvector` + `pg_trgm` RRF Search, RAG Synthesis Pipeline & RAGAS Evaluator | 📖 [docs/MEMBER_2_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_2_ROADMAP.md) |
-| **Member 3** | App Gateway & Frontend | FastAPI Application Gateway, Deterministic Allergy Safety Engine ($A \cap B \neq \emptyset$), SQLAlchemy DB Models & Vite+React UI | 📖 [docs/MEMBER_3_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_3_ROADMAP.md) |
+---
+
+## ✅ Project Milestone Status
+
+- [x] Shared contracts and parallel member workflow established
+- [x] Member 1 ingestion and OCR pipeline implemented
+- [x] Member 2 AI/RAG pipeline implemented
+- [x] Member 3 app/gateway layer integrated and merged to `main`
+- [x] Dependency issues resolved and validation passed in WSL
+- [x] Demo-ready functional MVP exists
+- [x] Research-paper direction is viable based on architecture and evaluation outputs
 
 ---
 

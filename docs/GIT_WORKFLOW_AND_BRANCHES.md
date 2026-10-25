@@ -1,50 +1,64 @@
 # Git Workflow & Branching Allocation
 
-To maintain a clean codebase and eliminate merge conflicts, all team members will follow this git workflow.
+This project is now using the main branch as the stable integration baseline after the member workstreams were merged and validated.
 
 ---
 
-## 1. Branch Strategy
+## 1. Current branch strategy
 
-The `main` branch is locked and kept stable. Development takes place on workstream branches:
+The repository currently reflects these active branches:
 
 ```text
-main (🔒 STABLE)
-│
-├── member-1-ingestion    (👤 Member 1: ingestion/, knowledge_base/)
-├── member-2-ai           (👤 Member 2: ai_engine/)
-└── member-3-app          (👤 Member 3: app/, frontend/)
+main
+├── member1
+├── member-2-ai
+└── member3
 ```
 
-### Short-Lived Feature Branches
-Within each workstream, members create short-lived feature branches:
-- `member-1-ingestion` $\rightarrow$ `feature/off-client`, `feature/ocr-preprocessor`
-- `member-2-ai` $\rightarrow$ `feature/vector-store`, `feature/llm-cleaner`
-- `member-3-app` $\rightarrow$ `feature/allergy-engine`, `feature/react-ui`
+### Current repo state
+- `main` is the integrated project baseline
+- `member1` contains the ingestion and OCR workstream
+- `member-2-ai` contains the AI and retrieval workstream
+- `member3` contains the app and safety logic workstream
 
 ---
 
-## 2. Shared Contract Rule (`schemas/contracts.py`)
+## 2. Merge and integration workflow
 
-`schemas/contracts.py` is the single source of truth for all data models.
-- **Rule**: If a field needs to be added or changed in `ProductData` or `AnalysisResponse`, all 3 members must discuss and agree.
-- A dedicated Pull Request must be submitted for contract changes before feature work begins.
+The actual project flow was:
+- merge member1 into main
+- merge member-2-ai into main
+- merge member3 into main
+
+This is the current repository reality and should be treated as the reference workflow for future documentation and team updates.
 
 ---
 
-## 3. How Teammates Set Up Their Local Branches
+## 3. Working rules
+
+- Keep the main branch stable for integration and validation.
+- Use member branches for subsystem-specific work.
+- Merge only after the relevant tests pass in the project environment.
+- Document changes and validation status in the member log files.
+
+---
+
+## 4. Example local branch workflow
 
 ```bash
-# Clone the repository
-git clone <repo-url>
-cd FoodIntellect
+cd /home/d_nishitha/AIPMS/FoodIntellect
 
-# Member 1 creates & switches to branch
-git checkout -b member-1-ingestion
+git checkout member1
+# or
 
-# Member 2 creates & switches to branch
-git checkout -b member-2-ai
+git checkout member-2-ai
+# or
 
-# Member 3 creates & switches to branch
-git checkout -b member-3-app
+git checkout member3
+```
+
+### Integration example
+```bash
+git checkout main
+git merge member3
 ```

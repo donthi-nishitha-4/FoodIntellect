@@ -1,72 +1,74 @@
 # 🏛️ Architecture Decision Record (ADR): FoodIntellect MVP
 
-This document records the key architectural and design decisions made for the **FoodIntellect** project.
+This document records the key architectural decisions for the current FoodIntellect project state after branch integration and final validation.
 
 ---
 
-## ADR-001: Standalone Project Directory vs. Feature Branching
+## ADR-001: Consolidated mainline integration after member workstreams
 
 ### Context
-The initial RAG codebase (`AIPMS / NStructions`) was developed for enterprise construction contract retrieval. FoodIntellect requires a completely different domain corpus (food ingredients, nutrition facts, allergens, and label OCR). A 3-member team will be developing distinct subsystems in parallel.
+The project originally developed in separate member branches, each focusing on a specific subsystem. Once the workstreams were validated individually, they needed to be merged into a common baseline.
 
 ### Decision
-Create a **clean, standalone project workspace** (`/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect`) rather than keeping FoodIntellect as a feature branch inside the old construction repo.
+Use the repository main branch as the shared integration point for the final project state.
 
 ### Rationale
-1. **Git Isolation**: Each team member can create clean feature branches off `main` (`feature/ocr-pipeline`, `feature/food-rag`, `feature/recommender`) without branch management confusion or commit history pollution from old construction work.
-2. **Clean Project Footprint**: Excludes tens of megabytes of irrelevant construction PDFs, Excel taxonomies, and obsolete chunkers.
+1. The merged repo now includes the ingestion, AI, and app layers together.
+2. This provides one stable baseline for testing, demo, and review.
+3. It avoids stale branch assumptions when documentation and validation are being maintained.
 
 ---
 
-## ADR-002: Deterministic Allergy Engine vs. LLM-Based Detection
+## ADR-002: Deterministic allergy safety remains rule-based
 
 ### Context
-Allergies pose critical health and safety risks. Using non-deterministic LLMs for allergen identification risks hallucinating safety warnings or missing lethal allergens (e.g. peanuts, dairy).
+Food safety decisions need to be explainable and stable.
 
 ### Decision
-Enforce a **strict, rule-based deterministic matching engine** ($A \cap B \neq \emptyset$) in Python for all allergy detection. The LLM is used **strictly for explanation**, not for detection decisions.
+Use a deterministic set-based allergy engine rather than relying purely on LLM-generated safety output.
 
 ### Rationale
-1. **Safety Guarantee**: Rule-based string matching and allergen taxonomy sets guarantee zero non-deterministic false negatives.
-2. **Academic & Industry Standard**: Demonstrates software engineering maturity during project reviews.
+1. Safety checks must be explainable and consistent.
+2. Users need predictable results for product safety decisions.
+3. The project keeps an AI layer for explanation and recommendations while preserving deterministic safety matching.
 
 ---
 
-## ADR-003: Hybrid Retrieval with Reciprocal Rank Fusion (RRF)
+## ADR-003: Hybrid retrieval remains central to the AI design
 
 ### Context
-Food searches require both exact keyword matching (e.g. brand names like "Oreo", specific E-numbers like "E211") and semantic retrieval (e.g. "preservatives preventing mold growth").
+Food-product queries require both semantic understanding and exact ingredient-level matching.
 
 ### Decision
-Use **Hybrid Search**: Combine PostgreSQL `pgvector` dense cosine distance with PostgreSQL `pg_trgm` sparse trigram similarity using Reciprocal Rank Fusion (RRF):
-$$RRF\_Score(d) = \sum_{m \in M} \frac{1}{k + r_m(d)}$$
+Keep hybrid search in the system architecture so retrieval is grounded in both meaning and domain-specific vocabulary.
 
 ### Rationale
-Dense vector search alone struggles on specific chemical names or E-numbers, while trigram search alone misses semantic intent. Hybrid RRF combines the strengths of both.
+This is important for ingredient names, additives, and product-specific terms that simple keyword matching alone may miss.
 
 ---
 
-## ADR-004: Multi-Provider LLM Failover Architecture
+## ADR-004: Current validation status accepts non-blocking warnings
 
 ### Context
-External LLM APIs (Groq, OpenRouter, Google Gemini) can experience rate limits, model deprecation, network latency, or downtime during live project demonstrations.
+The final repo validation produced deprecation warnings from third-party OCR libraries, but no failing tests.
 
 ### Decision
-Implement a **Sequential LLM Failover Wrapper** in `src/core/llm.py`:
-$$\text{Primary (Gemini-3.6-Flash)} \longrightarrow \text{Fallback 1 (Groq Llama-3.3-70b)} \longrightarrow \text{Fallback 2 (OpenRouter)}$$
+Treat these warnings as maintenance items rather than as blockers for project completion or demo readiness.
 
 ### Rationale
-Ensures high availability ($>99.9\%$) during evaluation tests and live user demonstrations without single-point-of-failure API dependency.
+1. The project is functionally passing in the active WSL environment.
+2. The warnings are from library deprecations, not application logic failures.
+3. This keeps the project state realistic and demo-ready without opening unnecessary scope.
 
 ---
 
-## ADR-005: Port Mapping & Windows Exclusion Compatibility
+## ADR-005: WSL project environment is the canonical validation environment
 
 ### Context
-Windows Hyper-V automatically reserves specific TCP port ranges (e.g., 5341–5440), causing bind errors when starting PostgreSQL Docker services on standard secondary ports like 5433 or 5435.
+The repo was initially validated from a Windows-based shell path, but the correct project environment is the WSL virtualenv.
 
 ### Decision
-Map the Docker PostgreSQL container to host port **`5445`**.
+Use the WSL environment as the canonical execution and test context for this project.
 
 ### Rationale
-Port 5445 falls outside Hyper-V's excluded port range and guarantees reliable socket binding across Windows host environments.
+This matches the actual repository setup and prevents shell-path issues or activation errors during validation and demo runs.

@@ -1,4 +1,7 @@
 # Member 1 — Complete Technical Documentation
+
+> Historical archive: this document is preserved as a record of the earlier Member 1 workstream. It is not current project guidance for the active merged repo.
+
 **Role:** Data, Ingestion & Recommender
 **Branch:** `member1`
 **Modules Owned:** `ingestion/`, `knowledge_base/`, `tests/test_ingestion.py`

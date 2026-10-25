@@ -2,8 +2,9 @@
 
 > **Domain:** FastAPI Application Gateway, Deterministic Allergy Safety Engine, Database ORM & Vite+React Frontend  
 > **Workload Share:** 33%  
-> **Git Branch:** `member-3-app`  
-> **Primary Output:** Working application gateway REST API and interactive user interface.
+> **Git Branch:** `member3` → merged into `main`  
+> **Primary Output:** Working application gateway REST API and interactive user interface.  
+> **Status as of Git History:** Final integration into `main` is complete; the app layer and allergy logic are part of the current project baseline.
 
 ---
 

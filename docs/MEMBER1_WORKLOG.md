@@ -1,4 +1,7 @@
 # Member 1 – Work Log
+
+> Historical archive: this document is retained for project history and reference only. It is not current project guidance for the active merged repo.
+
 **Role:** Data, Ingestion & Recommender
 **Branch:** `member1`
 **Modules Owned:** `ingestion/`, `knowledge_base/`, `tests/test_ingestion.py`

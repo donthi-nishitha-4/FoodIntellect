@@ -1,9 +1,10 @@
 # Member 1 — Individual MVP Roadmap
 
 > **Role:** Data, Ingestion & Recommender
-> **Git Branch:** `member1`
+> **Git Branch:** `member1` → merged into `main`
 > **Primary Output:** OCR pipeline, ingredient knowledge base, ingredient matcher, recommender engine, and academic evaluation suite.
-> **Last Verified:** 2026-10-04 | **Tests:** 52 passed, 1 skipped
+> **Status as of Git History:** Implemented and integrated into the main branch after successful merge history from `member1` into the project.
+> **Last Verified:** 2026-10-25 | **Repo Validation:** `pytest -q` passed with `59 passed, 13 warnings`
 
 ---
 

@@ -1,30 +1,79 @@
 # 🥗 Food Intellect MVP
 
-An AI-powered food intelligence platform combining **Label OCR**, **Deterministic Allergen Safety Engine**, **PostgreSQL Hybrid RAG Knowledge Retrieval**, and **Nutritional Recommendation Engines**.
+An AI-powered food intelligence platform combining OCR-based ingredient extraction, deterministic allergen safety checks, hybrid retrieval, and healthier-product recommendation.
 
-Designed with a **33% / 33% / 33% equal workload distribution** across 3 team members, communicating through strict shared Pydantic contracts (`schemas/contracts.py`).
+This project is now merged into `main` and reflects the actual implementation history from the git log. The branch timeline shows Member 1, Member 2, and Member 3 work being integrated into the mainline project, with the final merge commit: `5273ae9` (`Merge member3 into main`).
 
----
-
-## 🚀 Key Features
-
-- **Strict Shared Contracts (`schemas/contracts.py`)**: Centralized Pydantic v2 schemas (`ProductData`, `AnalysisResponse`, `OCRCleanerProtocol`) enabling zero-blocker parallel team development.
-- **Deterministic Allergen Safety Engine**: Rule-based string matching and synonym taxonomy expansion ($A \cap B \neq \emptyset$) in Python guaranteeing zero false-negative safety warnings (`SAFE`, `WARNING`, `DANGER`).
-- **PostgreSQL Hybrid Search**: Combines 384-dimensional dense vector cosine distance (`sentence-transformers`) with sparse trigram keyword search (`pg_trgm`) using Reciprocal Rank Fusion (RRF):
-  $$RRF\_Score(d) = \sum_{m \in M} \frac{1}{k + r_m(d)}$$
-- **Multi-Provider LLM Failover Architecture**: Sequential fallback (`Gemini 3.6 Flash` $\longrightarrow$ `Groq Llama-3.3-70b` $\longrightarrow$ `OpenRouter`) guarantees >99.9% uptime.
-- **Healthier Alternative Recommender**: Ranks candidate products in the same category by lower sugar and saturated fat deltas while filtering out conflicting allergens.
-- **Computer Vision OCR**: OpenCV preprocessing (grayscale, adaptive thresholding, deskewing) + EasyOCR / Tesseract for packaging label text extraction.
+### Current status
+- Git evidence: `main` is merged with `member3`, and `origin/main` is current
+- Validation evidence: `pytest -q` in the WSL venv passed with `59 passed, 13 warnings in 102.37s`
+- Demo readiness: strong MVP for a functional technical demo; warnings are only deprecation warnings from `easyocr`/`torch`
 
 ---
 
-## 👥 Team Workload & Domain Division (33% / 33% / 33%)
+## 🚀 Core Features
 
-| Workstream | Owner | Domain & Subsystem Responsibilities | Branch | Roadmap Document |
+- Deterministic allergen detection using set-intersection logic on ingredient and allergy vocabularies
+- OCR preprocessing and extraction pipeline for packaging text
+- Hybrid document retrieval using vector + keyword search patterns
+- AI-assisted product summarization and health analysis
+- Healthier alternative ranking based on nutritional improvements and allergen exclusions
+- App-layer API and UI integration for barcode and user profile interactions
+
+---
+
+## 👥 Member Status Snapshot
+
+| Workstream | Owner | Domain | Git Evidence | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Member 1** | Data & Ingestion | Open Food Facts API, OpenCV Preprocessing, EasyOCR Engine, Ingredient KB Matcher, and Healthier Alternative Recommender (`ingestion/recommender.py`). | `member-1-ingestion` | 📖 [MEMBER_1_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_1_ROADMAP.md) |
-| **Member 2** | AI & RAG Lead | LLM OCR Cleaner (`LLMOCRCleaner`), PostgreSQL `pgvector` + `pg_trgm` RRF Search, RAG Pipeline Synthesizer, FastAPI Route Helpers, and RAGAS Evaluator. | `member-2-ai` | 📖 [MEMBER_2_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_2_ROADMAP.md) |
-| **Member 3** | App & Gateway | FastAPI Application Gateway (`app/main.py`, `app/api/`), Deterministic Allergy Safety Engine ($A \cap B \neq \emptyset$), SQLAlchemy DB Models, and Vite+React Frontend UI. | `member-3-app` | 📖 [MEMBER_3_ROADMAP.md](file:///wsl.localhost/Ubuntu/home/d_nishitha/AIPMS/FoodIntellect/docs/MEMBER_3_ROADMAP.md) |
+| Member 1 | Data & Ingestion | OCR, ingestion, matcher, recommender | `member1` branch merged into main | ✅ Implemented |
+| Member 2 | AI & RAG | LLM cleaner, vector store, RAG pipeline, evaluator | `member-2-ai` merged into main | ✅ Implemented |
+| Member 3 | App & Gateway | FastAPI app, allergy engine, DB/session, UI wrappers | `member3` merged into main | ✅ Implemented |
+
+---
+
+## ✅ Demo Readiness Checklist
+
+- [x] Repo is on `main` and merged from all team branches
+- [x] Core ingestion + OCR + AI + app layers are integrated
+- [x] Project passes automated test suite in WSL virtualenv
+- [x] Ingestion fallback logic handles corrupt image input safely
+- [x] Dependency drift was fixed so the repo installs and runs correctly
+- [x] Demo can focus on: barcode/label upload → OCR → analysis → allergen safety → recommendations
+
+### Demo flow
+1. Launch the app locally from the project root.
+2. Upload a product label or scan a known barcode.
+3. Show OCR extraction of ingredients.
+4. Highlight allergen matching (`SAFE`, `WARNING`, `DANGER`).
+5. Display AI summary and healthier alternatives.
+6. Explain the architecture split between ingestion, AI, and app layers.
+
+### Good demo narrative
+- “This system converts raw packaging information into structured product insights.”
+- “It combines deterministic rules with AI retrieval to improve safety and explainability.”
+- “The solution is designed to be modular and team-parallelized, which is why each member owns a workflow.”
+
+---
+
+## 📄 Research Paper Direction
+
+This project is also a good candidate for a research-style paper if you want to extend it beyond a demo.
+
+Possible paper angles:
+- Ingredient-aware food safety and allergen detection using hybrid symbolic + retrieval-based reasoning
+- Explainable recommendation pipelines for healthier food substitutions
+- OCR-to-knowledge extraction for packaged food products
+- Hybrid search for domain-specific food knowledge retrieval
+
+A strong paper structure would be:
+1. Problem statement
+2. Related work
+3. Methodology
+4. System architecture
+5. Evaluation metrics
+6. Results
+7. Limitations and future work
 
 ---
 

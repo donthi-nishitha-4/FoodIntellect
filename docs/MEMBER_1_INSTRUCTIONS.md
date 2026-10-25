@@ -1,43 +1,48 @@
 # Member 1 — Data, Ingestion & Recommender Instructions
 
 > **Subsystem Ownership:** `ingestion/`, `knowledge_base/`  
-> **Git Branch:** `member-1-ingestion`  
-> **Target Output:** `ProductData` models and nutrient alternative recommendations.
+> **Git Branch:** `member1`  
+> **Project status:** This work is integrated into the current mainline repo and validated in the WSL project environment.  
+> **Target Output:** Product ingestion, OCR preprocessing, ingredient matching, and healthier recommendation logic.
 
 ---
 
 ## 1. Workload Description & Responsibilities
 
-1. **Open Food Facts API (`ingestion/openfoodfacts/client.py`)**:
-   - Fetch product metadata by EAN/UPC barcode string.
-   - Parse ingredients list, nutrition facts (energy, fat, sugars, sodium, protein, fiber), allergens, and category tags.
+1. **Open Food Facts ingestion and product mapping**
+   - Parse product metadata, ingredient lists, nutrition facts, allergens, categories, and brand data.
+   - Keep ingestion logic aligned with the current shared product contracts.
 
-2. **OCR Package Preprocessing & Extraction (`ingestion/ocr/`)**:
-   - OpenCV image preprocessing (`preprocessor.py`): Grayscale conversion, adaptive Gaussian thresholding, deskewing.
-   - OCR Text Extraction (`engine.py`): EasyOCR / PaddleOCR text string extraction (PyTesseract fallback).
+2. **OCR preprocessing and extraction**
+   - Maintain robust image preprocessing and OCR extraction flow.
+   - Ensure malformed image bytes fail safely at the direct function level while recovering gracefully in the pipeline.
 
-3. **Ingredient Knowledge Base (`knowledge_base/`)**:
-   - Maintain `ingredients_seed.json` (curated seed list of food ingredients, functional additive roles, safety flags, and aliases).
-   - Implement `matcher.py` using `rapidfuzz` string matching to normalize raw scanned ingredient strings.
+3. **Ingredient knowledge base and matching**
+   - Maintain curated ingredient and alias mapping used for normalization and recognition.
+   - Keep ingredient matching logic compatible with downstream AI and safety evaluation.
 
-4. **Healthier Alternative Recommender (`ingestion/recommender.py`)**:
-   - Filter candidate food products in the same category.
-   - Exclude products matching user's allergen profile ($A \cap B = \emptyset$).
-   - Rank alternatives with lower sugar and saturated fat deltas.
+4. **Healthier product recommendations**
+   - Filter alternatives by category and allergen safety.
+   - Rank candidate products according to meaningful nutrient improvements.
 
 ---
 
 ## 2. Shared Contract Rules
 
-- **Do NOT modify `schemas/contracts.py` directly without team PR review.**
-- Consume and return `ProductData` and `RecommendationItem` Pydantic models.
-- Depend strictly on `OCRCleanerProtocol` in `ingestion/pipeline.py`. Use `MockOCRCleaner` for unit testing so you are never blocked by Member 2.
+- Keep shared models and contracts aligned with the current repository state.
+- Use the repo’s current product schemas rather than stale assumptions from older branch docs.
+- Do not break the ingestion-to-analysis handoff expected by the main project pipeline.
 
 ---
 
 ## 3. Daily Execution Command
 
 ```bash
-# Run Member 1 test suite
-PYTHONPATH=. pytest tests/test_ingestion.py
+cd /home/d_nishitha/AIPMS/FoodIntellect
+source venv/bin/activate
+pytest tests/test_ingestion.py -q
 ```
+
+### Current validation status
+- The repo-level validation in the project WSL environment passed successfully.
+- Warnings are deprecation warnings from OCR-related libraries and do not block execution.

@@ -1,32 +1,117 @@
-"""
-FastAPI User Profile Routes (Member 3 Workstream)
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
 
-Endpoints for managing user allergy profiles and health preferences.
-"""
-from fastapi import APIRouter
-from schemas.contracts import UserProfile
+from app.db.session import get_db
+from app.db.models import User, AnalysisHistory
 
-router = APIRouter(prefix="/api/user", tags=["User Profiles"])
 
-# Memory store placeholder
-USERS_DB = {
-    "usr_demo": UserProfile(
-        user_id="usr_demo",
-        name="Demo User",
-        allergies=["peanuts", "milk", "gluten"],
-        dietary_preferences=["low_sugar"]
+router = APIRouter(
+    prefix="/user",
+    tags=["User"]
+)
+
+
+@router.post("/profile")
+def create_profile(
+    name: str,
+    email: str,
+    age: int = None,
+    dietary_preference: str = None,
+    allergies: str = None,
+    db: Session = Depends(get_db)
+):
+
+    user = User(
+        name=name,
+        email=email,
+        age=age,
+        dietary_preference=dietary_preference,
+        allergies=allergies
     )
-}
+
+    db.add(user)
+
+    db.commit()
+
+    db.refresh(user)
+
+    return {
+        "success": True,
+        "user_id": user.id,
+        "message": "Profile created successfully"
+    }
 
 
-@router.get("/{user_id}", response_model=UserProfile)
-async def get_user_profile(user_id: str):
-    """Retrieve user profile by ID."""
-    return USERS_DB.get(user_id, UserProfile(user_id=user_id, name="Guest"))
+@router.get("/profile/{user_id}")
+def get_profile(
+    user_id: int,
+    db: Session = Depends(get_db)
+):
+
+    user = db.query(User).filter(
+        User.id == user_id
+    ).first()
+
+    if not user:
+
+        return {
+            "success": False,
+            "message": "User not found"
+        }
+
+    return {
+        "success": True,
+
+        "user": {
+            "id": user.id,
+            "name": user.name,
+            "email": user.email,
+            "age": user.age,
+            "dietary_preference":
+                user.dietary_preference,
+            "allergies":
+                user.allergies
+        }
+    }
 
 
-@router.post("/", response_model=UserProfile)
-async def update_user_profile(profile: UserProfile):
-    """Save or update user profile settings."""
-    USERS_DB[profile.user_id] = profile
-    return profile
+@router.get("/history/{user_id}")
+def get_history(
+    user_id: int,
+    db: Session = Depends(get_db)
+):
+
+    history = db.query(
+        AnalysisHistory
+    ).filter(
+        AnalysisHistory.user_id == user_id
+    ).all()
+
+    result = []
+
+    for item in history:
+
+        result.append({
+
+            "id": item.id,
+
+            "product_name":
+                item.product_name,
+
+            "barcode":
+                item.barcode,
+
+            "ingredients":
+                item.ingredients,
+
+            "analysis":
+                item.analysis,
+
+            "created_at":
+                str(item.created_at)
+        })
+
+    return {
+        "success": True,
+        "history": result
+    }

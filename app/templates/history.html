@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Analysis History</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Analysis History</h1>
+
+    <div id="history">
+
+        Loading...
+
+    </div>
+
+    <br>
+
+    <a href="/">
+        ← Home
+    </a>
+
+</div>
+
+
+<script>
+
+const userId = 1;
+
+
+async function loadHistory() {
+
+    const response =
+        await fetch(
+            `/api/user/history/${userId}`
+        );
+
+
+    const data =
+        await response.json();
+
+
+    const container =
+        document.getElementById("history");
+
+
+    if (
+        !data.history ||
+        data.history.length === 0
+    ) {
+
+        container.innerHTML =
+            "<p>No analysis history found.</p>";
+
+        return;
+    }
+
+
+    let html = "";
+
+
+    data.history.forEach(item => {
+
+        html += `
+
+            <div class="history-card">
+
+                <h3>
+                    ${item.product_name}
+                </h3>
+
+                <p>
+                    Barcode:
+                    ${item.barcode || "N/A"}
+                </p>
+
+                <p>
+                    Date:
+                    ${item.created_at}
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+
+    container.innerHTML = html;
+
+}
+
+
+loadHistory();
+
+</script>
+
+</body>
+
+</html>

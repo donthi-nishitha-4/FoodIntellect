@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>User Profile</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>User Profile</h1>
+
+    <form id="profileForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            required
+        >
+
+        <input
+            type="number"
+            id="age"
+            placeholder="Age"
+        >
+
+        <input
+            type="text"
+            id="diet"
+            placeholder="Dietary preference"
+        >
+
+        <input
+            type="text"
+            id="allergies"
+            placeholder="Allergies"
+        >
+
+        <button type="submit">
+            Save Profile
+        </button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <br>
+
+    <a href="/">
+        ← Home
+    </a>
+
+</div>
+
+
+<script>
+
+document
+.getElementById("profileForm")
+.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+
+    const name =
+        document.getElementById("name").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const age =
+        document.getElementById("age").value;
+
+    const diet =
+        document.getElementById("diet").value;
+
+    const allergies =
+        document.getElementById("allergies").value;
+
+
+    const params = new URLSearchParams({
+
+        name: name,
+
+        email: email,
+
+        age: age,
+
+        dietary_preference: diet,
+
+        allergies: allergies
+
+    });
+
+
+    const response =
+        await fetch(
+            "/api/user/profile",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+
+                body: params
+            }
+        );
+
+
+    const data =
+        await response.json();
+
+
+    document.getElementById("message")
+        .innerText =
+        data.message ||
+        "Profile saved";
+
+});
+
+</script>
+
+</body>
+
+</html>

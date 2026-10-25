@@ -1,0 +1,106 @@
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f5f5f5;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.container {
+
+    width: 80%;
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+}
+
+
+h1 {
+
+    text-align: center;
+
+}
+
+
+.card {
+
+    border: 1px solid #ddd;
+
+    padding: 25px;
+
+    margin: 20px 0;
+
+    border-radius: 8px;
+
+}
+
+
+input {
+
+    display: block;
+
+    width: 90%;
+
+    padding: 12px;
+
+    margin: 10px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+}
+
+
+button {
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+
+.navigation {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+}
+
+
+.navigation a {
+
+    margin: 10px;
+
+}
+
+
+.history-card {
+
+    border: 1px solid #ddd;
+
+    padding: 15px;
+
+    margin: 10px 0;
+
+    border-radius: 6px;
+
+}

@@ -51,45 +51,39 @@ app.include_router(
 )
 
 
+
+
 @app.get("/")
 def home(request: Request):
-
     return templates.TemplateResponse(
-        "index.html",
-        {
-            "request": request
-        }
+        request=request,
+        name="index.html",
+        context={}
     )
 
 
 @app.get("/result")
 def result_page(request: Request):
-
     return templates.TemplateResponse(
-        "result.html",
-        {
-            "request": request
-        }
+        request=request,
+        name="result.html",
+        context={}
     )
 
 
 @app.get("/profile")
 def profile_page(request: Request):
-
     return templates.TemplateResponse(
-        "profile.html",
-        {
-            "request": request
-        }
+        request=request,
+        name="profile.html",
+        context={}
     )
 
 
 @app.get("/history")
 def history_page(request: Request):
-
     return templates.TemplateResponse(
-        "history.html",
-        {
-            "request": request
-        }
+        request=request,
+        name="history.html",
+        context={}
     )

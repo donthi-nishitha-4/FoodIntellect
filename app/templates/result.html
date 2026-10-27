@@ -1,117 +1,481 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
 
-    <title>Food Analysis</title>
+    <title>Food Analysis | FoodIntellect</title>
 
-    <link rel="stylesheet"
-          href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/theme.css">
 
+    <style>
+        /* AI-generated Markdown content */
+
+        .markdown-content {
+            padding: 0 24px 20px;
+            color: #c2d0e1;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+            background: var(--surface, #101b2d);
+        }
+
+        .markdown-content h1,
+        .markdown-content h2,
+        .markdown-content h3 {
+            margin: 18px 0 10px;
+            padding: 0;
+            border: none;
+            color: var(--teal, #42e7e4);
+            background: transparent;
+            line-height: 1.4;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.4rem;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.2rem;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.05rem;
+        }
+
+        .markdown-content p {
+            margin: 0 0 14px;
+            padding: 0;
+            border: none;
+            color: inherit;
+            background: transparent;
+        }
+
+        .markdown-content strong {
+            color: #f4f8ff;
+            font-weight: 750;
+        }
+
+        .markdown-content em {
+            color: var(--amber, #ffc34d);
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin: 8px 0 18px;
+            padding-left: 25px;
+            border: none;
+            background: transparent;
+        }
+
+        .markdown-content li {
+            margin: 8px 0;
+            padding: 10px 12px;
+            border: 1px solid var(--border, #293b54);
+            border-radius: 9px;
+            color: #c2d0e1;
+            background: rgba(10, 20, 34, 0.5);
+        }
+
+        .markdown-content code {
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: var(--teal, #42e7e4);
+            background: #0b1422;
+        }
+
+        .result-section {
+            margin-bottom: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border, #293b54);
+            border-radius: 16px;
+            background: var(--surface, #101b2d);
+        }
+
+        .result-section>h2 {
+            margin: 0;
+            padding: 20px 24px;
+            color: var(--text, #f3f7fc);
+            background: var(--surface-raised, #142136);
+            overflow-wrap: anywhere;
+        }
+
+        .result-section>h3 {
+            margin: 0;
+            padding: 17px 24px 8px;
+            color: var(--teal, #42e7e4);
+            background: var(--surface, #101b2d);
+            border: none;
+        }
+
+        .result-section>p {
+            margin: 0;
+            padding: 0 24px 20px;
+            color: #c2d0e1;
+            background: var(--surface, #101b2d);
+            overflow-wrap: anywhere;
+        }
+
+        .result-section>ul {
+            margin: 0;
+            padding: 8px 24px 20px 44px;
+            color: #c2d0e1;
+            background: var(--surface, #101b2d);
+        }
+
+        .result-section>ul li {
+            margin: 8px 0;
+            padding: 12px;
+            border: 1px solid var(--border, #293b54);
+            border-radius: 10px;
+            background: #101e30;
+        }
+
+        .result-section>ul li b {
+            color: var(--amber, #ffc34d);
+        }
+
+        .allergen-section {
+            border-color: rgba(255, 195, 77, 0.35);
+            background: rgba(255, 195, 77, 0.04);
+        }
+
+        .allergen-section>h3 {
+            color: var(--amber, #ffc34d);
+            background: rgba(255, 195, 77, 0.08);
+        }
+
+        .allergen-section>p {
+            background: rgba(255, 195, 77, 0.04);
+        }
+
+        .empty-result {
+            padding: 24px;
+            border: 1px solid var(--border, #293b54);
+            border-radius: 14px;
+            color: var(--muted, #9aacc3);
+            background: var(--surface, #101b2d);
+        }
+
+        @media (max-width: 520px) {
+            .markdown-content {
+                padding: 0 17px 18px;
+            }
+
+            .result-section>h2 {
+                padding: 18px 17px;
+            }
+
+            .result-section>h3 {
+                padding: 15px 17px 8px;
+            }
+
+            .result-section>p {
+                padding: 0 17px 18px;
+            }
+
+            .result-section>ul {
+                padding: 8px 14px 18px 30px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <main class="app-shell page-shell">
 
-    <h1>Food Analysis Result</h1>
+        <header class="page-header">
+            <a class="back-link" href="/">← Back to home</a>
 
-    <div id="result">
+            <span class="eyebrow">FOOD ANALYSIS REPORT</span>
 
-        Loading...
+            <h1>Your food insights</h1>
 
-    </div>
+            <p>
+                A closer look at ingredients, allergens and recommendations.
+            </p>
+        </header>
 
-    <br>
+        <section id="result" class="result-layout" aria-live="polite">
+            <div class="panel loading-state">
+                <span class="loading-dot"></span>
+                Loading analysis…
+            </div>
+        </section>
 
-    <a href="/">
-        ← Back to Home
-    </a>
+        <footer class="app-footer">
+            FoodIntellect <span>•</span> Understand what's in your food
+        </footer>
 
-</div>
+    </main>
+
+    <script>
+        /*
+         * Convert basic Markdown into HTML.
+         * HTML is escaped before Markdown formatting is applied.
+         */
+
+        function renderMarkdown(markdown) {
+
+            if (markdown === null || markdown === undefined || markdown === "") {
+                return "<p>No information available.</p>";
+            }
+
+            const escapeHTML = (text) => {
+                return String(text)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+            };
+
+            const inlineFormat = (text) => {
+
+                return escapeHTML(text)
+                    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+                    .replace(/__(.+?)__/g, "<strong>$1</strong>")
+                    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+                    .replace(/_(.+?)_/g, "<em>$1</em>")
+                    .replace(/`([^`]+)`/g, "<code>$1</code>");
+            };
+
+            const cleanedMarkdown = String(markdown)
+                .replace(/^\s*`{3,}[ \t]*(?:html|markdown|md|text)?[ \t]*\r?\n?/i, "")
+                .replace(/\r?\n?[ \t]*`{3,}[ \t]*$/i, "")
+                .trim();
+            const lines = cleanedMarkdown
+                .replace(/\r\n?/g, "\n")
+                .split("\n");
+            let html = "";
+            let paragraph = [];
+            let listType = null;
+
+            function closeParagraph() {
+
+                if (paragraph.length > 0) {
+
+                    html += `<p>${inlineFormat(paragraph.join(" "))}</p>`;
+
+                    paragraph = [];
+                }
+            }
+
+            function closeList() {
+
+                if (listType !== null) {
+
+                    html += listType === "ol" ? "</ol>" : "</ul>";
+
+                    listType = null;
+                }
+            }
+
+            for (const rawLine of lines) {
+
+                const line = rawLine.trim();
+
+                if (!line) {
+
+                    closeParagraph();
+                    closeList();
+
+                    continue;
+                }
+
+                // Markdown headings: # Heading, ## Heading, ### Heading
+
+                const heading = line.match(/^(#{1,3})\s+(.+)$/);
+
+                if (heading) {
+
+                    closeParagraph();
+                    closeList();
+
+                    const level = heading[1].length;
+
+                    html += `<h${level}>${inlineFormat(heading[2])}</h${level}>`;
+
+                    continue;
+                }
+
+                // Markdown unordered lists: -, * or +
+
+                const bullet = line.match(/^[-*+]\s+(.+)$/);
+
+                // Markdown ordered lists: 1. Item, 2. Item, etc.
+
+                const numbered = line.match(/^\d+[.)]\s+(.+)$/);
+
+                if (bullet || numbered) {
+
+                    closeParagraph();
+
+                    const requiredType = numbered ? "ol" : "ul";
+
+                    if (listType !== requiredType) {
+
+                        closeList();
+
+                        html += `<${requiredType} class="markdown-list">`;
+
+                        listType = requiredType;
+                    }
+
+                    const item = bullet ? bullet[1] : numbered[1];
+
+                    html += `<li>${inlineFormat(item)}</li>`;
+
+                    continue;
+                }
+
+                closeList();
+
+                // Continue the current paragraph when a line is ordinary text.
+
+                paragraph.push(line);
+            }
+
+            closeParagraph();
+            closeList();
+
+            return html;
+        }
 
 
-<script>
+        /*
+         * Existing analysis data source preserved.
+         */
 
-const data =
-    JSON.parse(
-        sessionStorage.getItem("analysis")
-    );
-
-
-if (!data) {
-
-    document.getElementById("result")
-        .innerHTML =
-        "<p>No analysis available.</p>";
-
-}
-else {
-
-    const a = data.analysis;
-
-    let html = "";
-
-    html +=
-        `<h2>${a.product_name}</h2>`;
-
-    html +=
-        `<h3>Overall Assessment</h3>`;
-
-    html +=
-        `<p>${a.overall_assessment}</p>`;
+        const data = JSON.parse(
+            sessionStorage.getItem("analysis")
+        );
 
 
-    html +=
-        `<h3>Ingredient Analysis</h3>`;
+        if (!data || !data.analysis) {
 
-    html += "<ul>";
-
-    a.ingredient_analysis.forEach(
-        item => {
-
-            html += `
-                <li>
-                    <b>${item.ingredient}</b>
-                    -
-                    ${item.category}
-                    <br>
-                    ${item.explanation}
-                </li>
+            document.getElementById("result").innerHTML = `
+                <div class="empty-result">
+                    No analysis available. Please analyze a product first.
+                </div>
             `;
 
+        } else {
+
+            const a = data.analysis;
+
+            let html = "";
+
+            // Product name
+
+            html += `
+                <div class="result-section">
+                    <h2>${escapeHTML(String(a.product_name || "Unknown Product"))}</h2>
+                </div>
+            `;
+
+
+            // Overall assessment
+
+            html += `
+                <div class="result-section">
+                    <h3>Overall Assessment</h3>
+
+                    <div class="markdown-content">
+                        ${renderMarkdown(a.overall_assessment)}
+                    </div>
+                </div>
+            `;
+
+
+            // Ingredient analysis
+
+            html += `
+                <div class="result-section">
+                    <h3>Ingredient Analysis</h3>
+                    <ul>
+            `;
+
+            if (Array.isArray(a.ingredient_analysis)) {
+
+                a.ingredient_analysis.forEach(item => {
+
+                    html += `
+                        <li>
+                            <b>${renderMarkdown(item.ingredient)}</b>
+                            — ${renderMarkdown(item.category)}
+                            <br>
+                            ${renderMarkdown(item.explanation)}
+                        </li>
+                    `;
+
+                });
+
+            }
+
+            html += `
+                    </ul>
+                </div>
+            `;
+
+
+            // Allergen information
+
+            const allergens = Array.isArray(a.allergens)
+                ? a.allergens
+                : [];
+
+            html += `
+                <div class="result-section allergen-section">
+                    <h3>Allergen Information</h3>
+
+                    <p>
+                        ${allergens.length
+                    ? allergens.map(item => renderMarkdown(item)).join(", ")
+                    : "No allergen information available."}
+                    </p>
+                </div>
+            `;
+
+
+            // Health summary: Markdown is rendered here.
+
+            html += `
+                <div class="result-section">
+                    <h3>Health Summary</h3>
+
+                    <div class="markdown-content">
+                        ${renderMarkdown(a.health_summary)}
+                    </div>
+                </div>
+            `;
+
+
+            // Recommendation
+
+            html += `
+                <div class="result-section">
+                    <h3>Recommendation</h3>
+
+                    <div class="markdown-content">
+                        ${renderMarkdown(
+                a.recommendation
+                    ? a.recommendation.message
+                    : "No recommendation available."
+            )}
+                    </div>
+                </div>
+            `;
+
+
+            // Display the final report.
+
+            document.getElementById("result").innerHTML = html;
+
         }
-    );
-
-    html += "</ul>";
-
-
-    html +=
-        `<h3>Allergens</h3>`;
-
-    html +=
-        `<p>${a.allergens.join(", ")}</p>`;
-
-
-    html +=
-        `<h3>Health Summary</h3>`;
-
-    html +=
-        `<p>${a.health_summary}</p>`;
-
-
-    html +=
-        `<h3>Recommendation</h3>`;
-
-    html +=
-        `<p>${a.recommendation.message}</p>`;
-
-
-    document.getElementById("result")
-        .innerHTML = html;
-}
-
-</script>
+    </script>
 
 </body>
 

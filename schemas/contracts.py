@@ -136,3 +136,10 @@ class MockOCRCleaner:
             categories=["Biscuits", "Snacks"],
             source="ocr",
         )
+
+class ChatRequest(BaseModel):
+    prompt: str = Field(..., description="User question")
+
+class ChatResponse(BaseModel):
+    success: bool
+    answer: str = Field(..., description="LLM-generated answer")

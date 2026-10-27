@@ -1,5 +1,8 @@
+# pyrefly: ignore[missing-import]
 from fastapi import FastAPI, Request
+# pyrefly: ignore[missing-import]
 from fastapi.staticfiles import StaticFiles
+# pyrefly: ignore[missing-import]
 from fastapi.templating import Jinja2Templates
 
 from app.db.session import engine, Base
@@ -7,6 +10,8 @@ from app.db.session import engine, Base
 from app.api.routes_ingest import router as ingest_router
 from app.api.routes_analyze import router as analyze_router
 from app.api.routes_user import router as user_router
+# pyrefly: ignore[missing-import]
+from app.api.routes_chat import router as chat_router
 
 
 # Create database tables
@@ -33,7 +38,7 @@ templates = Jinja2Templates(
     directory="app/templates"
 )
 
-
+app.include_router(chat_router, prefix="/api")
 # API routes
 app.include_router(
     ingest_router,

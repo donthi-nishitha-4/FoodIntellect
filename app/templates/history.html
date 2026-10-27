@@ -1,75 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-    <title>Analysis History</title>
-
-    <link rel="stylesheet"
-          href="/static/css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <title>Analysis History | FoodIntellect</title>
+    <link rel="stylesheet" href="/static/css/theme.css">
 </head>
 
 <body>
+    <main class="app-shell page-shell">
+        <header class="page-header">
+            <a class="back-link" href="/">← Home</a>
+            <span class="eyebrow">YOUR ACTIVITY</span>
+            <h1>Analysis history</h1>
+            <p>Revisit products you've analyzed before.</p>
+        </header>
 
-<div class="container">
+        <section class="panel history-panel">
+            <div class="panel-title">
+                <span class="card-icon icon-teal" aria-hidden="true">◷</span>
+                <div>
+                    <h2>Recent analyses</h2>
+                    <p>Your saved product analysis records.</p>
+                </div>
+            </div>
+            <div id="history" class="history-list">
+                <div class="loading-state"><span class="loading-dot"></span> Loading your history…</div>
+            </div>
+        </section>
+        <footer class="app-footer">FoodIntellect <span>•</span> Your food journey at a glance</footer>
+    </main>
 
-    <h1>Analysis History</h1>
+    <script>
+        const userId = 1;
 
-    <div id="history">
+        async function loadHistory() {
 
-        Loading...
+            const response =
+                await fetch(
+                    `/api/user/history/${userId}`
+                );
 
-    </div>
+            const data =
+                await response.json();
 
-    <br>
+            const container =
+                document.getElementById("history");
 
-    <a href="/">
-        ← Home
-    </a>
+            if (
+                !data.history ||
+                data.history.length === 0
+            ) {
 
-</div>
+                container.innerHTML =
+                    "<p>No analysis history found.</p>";
 
+                return;
+            }
 
-<script>
+            let html = "";
 
-const userId = 1;
+            data.history.forEach(item => {
 
-
-async function loadHistory() {
-
-    const response =
-        await fetch(
-            `/api/user/history/${userId}`
-        );
-
-
-    const data =
-        await response.json();
-
-
-    const container =
-        document.getElementById("history");
-
-
-    if (
-        !data.history ||
-        data.history.length === 0
-    ) {
-
-        container.innerHTML =
-            "<p>No analysis history found.</p>";
-
-        return;
-    }
-
-
-    let html = "";
-
-
-    data.history.forEach(item => {
-
-        html += `
+                html += `
 
             <div class="history-card">
 
@@ -91,18 +86,14 @@ async function loadHistory() {
 
         `;
 
-    });
+            });
 
+            container.innerHTML = html;
 
-    container.innerHTML = html;
+        }
 
-}
-
-
-loadHistory();
-
-</script>
-
+        loadHistory();
+    </script>
 </body>
 
 </html>

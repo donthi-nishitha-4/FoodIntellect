@@ -79,3 +79,25 @@ def failover_llm_call(prompt: str) -> str:
     return content
 
 
+class LLMClient:
+    """Thin wrapper exposing a ``.complete`` method for the FastAPI chat endpoint.
+
+    It leverages the existing fail‑over LLM call logic (Google Gemini → Groq → OpenRouter).
+    """
+
+    def __init__(self, temperature: float = 0.1, max_retries: int = 2, timeout: float = 15.0):
+        self.temperature = temperature
+        self.max_retries = max_retries
+        self.timeout = timeout
+
+    def complete(self, prompt: str) -> str:
+        """Return the LLM response for the given ``prompt``."""
+        messages = [{"role": "user", "content": prompt}]
+        response, _ = query_llm_with_provider(
+            messages,
+            temperature=self.temperature,
+            max_retries=self.max_retries,
+            timeout=self.timeout,
+        )
+        return response
+

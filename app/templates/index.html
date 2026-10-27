@@ -1,88 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-    <title>Food Intellect</title>
-
-    <link rel="stylesheet"
-          href="/static/css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <title>FoodIntellect | AI Food Intelligence</title>
+    <link rel="stylesheet" href="/static/css/theme.css">
 </head>
 
 <body>
+    <main class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="/" aria-label="FoodIntellect home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M8 5.5a3 3 0 0 1 5.7-1.2M6.5 9.5a3 3 0 0 0 0 5.8M8 18.5a3 3 0 0 0 5.7 1.2M13 4.5v15M13 8h4a2.5 2.5 0 0 0 0-5M13 12h5M13 16h3a2.5 2.5 0 0 1 0 5M6.5 12.4h6.5"
+                            stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="brand-copy">
+                    <strong>FoodIntellect</strong>
+                    <small>AI FOOD INTELLIGENCE</small>
+                </span>
+            </a>
+            <span class="topbar-label"><span class="status-dot"></span> Smarter food choices</span>
+        </header>
 
-<div class="container">
+        <section class="hero-panel">
+            <div class="hero-content">
+                <span class="eyebrow">FOOD ANALYSIS REPORT</span>
+                <h1>Understand what's in your food.</h1>
+                <p>Ingredient insights, allergen awareness and smarter alternatives.</p>
+                <div class="hero-tags">
+                    <span class="tag tag-teal">Ingredient insights</span>
+                    <span class="tag tag-amber">Allergen alerts</span>
+                </div>
+            </div>
+            <div class="hero-orbit" aria-hidden="true">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit-core">FI</div>
+                <span class="orbit-dot dot-one"></span>
+                <span class="orbit-dot dot-two"></span>
+                <span class="orbit-dot dot-three"></span>
+            </div>
+        </section>
 
-    <h1>Food Intellect</h1>
+        <section class="section-heading">
+            <div>
+                <span class="eyebrow">GET STARTED</span>
+                <h2>Analyze your food</h2>
+            </div>
+            <span class="section-caption">Choose a method to begin</span>
+        </section>
 
-    <p>
-        AI Powered Food Intelligence
-        and Alternatives Recommendation Platform
-    </p>
+        <section class="analysis-grid">
+            <article class="panel analysis-card">
+                <div class="card-icon icon-teal" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M7 12h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="card-heading">
+                    <h3>Scan product barcode</h3>
+                    <p>Look up a packaged product</p>
+                </div>
+                <form id="barcodeForm" class="form-stack">
+                    <label for="barcode">Barcode number</label>
+                    <input type="text" id="barcode" placeholder="Enter barcode" required>
+                    <button type="submit">Analyze product <span aria-hidden="true">→</span></button>
+                </form>
+            </article>
 
+            <article class="panel analysis-card">
+                <div class="card-icon icon-amber" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="currentColor" stroke-width="1.7"
+                            stroke-linejoin="round" />
+                        <path d="m4.5 7.8 7.5 4.3 7.5-4.3M12 12.1V21" stroke="currentColor" stroke-width="1.7"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="card-heading">
+                    <h3>Scan food label</h3>
+                    <p>Upload an image for OCR analysis</p>
+                </div>
+                <form id="imageForm" class="form-stack">
+                    <label for="foodImage">Food label image</label>
+                    <input type="file" id="foodImage" accept="image/*" required>
+                    <button type="submit" class="button-secondary">Upload &amp; analyze <span
+                            aria-hidden="true">↑</span></button>
+                </form>
+            </article>
+        </section>
 
-    <div class="card">
+        <!-- Chatbot is intentionally a separate section; existing IDs and JS are preserved. -->
+        <section class="panel chatbot-panel">
+            <div class="chat-intro">
+                <div class="card-icon icon-amber" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M20.5 11.5a8 8 0 0 1-8 8H8l-4.5 2 1.2-4.2A8 8 0 1 1 20.5 11.5Z" stroke="currentColor"
+                            stroke-width="1.7" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="eyebrow">FOOD Q&amp;A</span>
+                    <h2>Ask FoodIntellect</h2>
+                    <p>Have a question about ingredients, nutrition or allergens?</p>
+                </div>
+            </div>
+            <div class="chat-controls">
+                <label class="visually-hidden" for="chat-prompt">Your food question</label>
+                <textarea id="chat-prompt" rows="3" placeholder="e.g. Is hazelnut safe for my diet?"></textarea>
+                <button type="button" id="chat-send" class="btn">Ask AI <span aria-hidden="true">→</span></button>
+            </div>
+            <div id="chat-response" class="response" aria-live="polite"></div>
+        </section>
 
-        <h2>Scan Product Using Barcode</h2>
+        <nav class="bottom-nav" aria-label="Main navigation">
+            <a href="/profile"><span class="nav-symbol">◎</span><span>Profile</span></a>
+            <a href="/history"><span class="nav-symbol">◷</span><span>History</span></a>
+        </nav>
 
-        <form id="barcodeForm">
+        <footer class="app-footer">FoodIntellect <span>•</span> Make informed food choices</footer>
+    </main>
 
-            <input
-                type="text"
-                id="barcode"
-                placeholder="Enter barcode"
-                required
-            >
-
-            <button type="submit">
-                Analyze Product
-            </button>
-
-        </form>
-
-    </div>
-
-
-    <div class="card">
-
-        <h2>Upload Food Label</h2>
-
-        <form id="imageForm">
-
-            <input
-                type="file"
-                id="foodImage"
-                accept="image/*"
-                required
-            >
-
-            <button type="submit">
-                Upload & Analyze
-            </button>
-
-        </form>
-
-    </div>
-
-
-    <div class="navigation">
-
-        <a href="/profile">
-            Profile
-        </a>
-
-        <a href="/history">
-            History
-        </a>
-
-    </div>
-
-</div>
-
-
-<script src="/static/js/app.js"></script>
-
+    <script>
+        document.getElementById('chat-send').addEventListener('click', async () => {
+            const prompt = document.getElementById('chat-prompt').value.trim();
+            if (!prompt) return;
+            const respEl = document.getElementById('chat-response');
+            respEl.innerHTML = '<em>Thinking…</em>';
+            try {
+                const r = await fetch('/api/chat/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt })
+                });
+                const data = await r.json();
+                respEl.textContent = data.answer;
+            } catch (e) {
+                respEl.textContent = 'Error: ' + e.message;
+            }
+        });
+    </script>
+    <script src="/static/js/app.js"></script>
 </body>
 
 </html>

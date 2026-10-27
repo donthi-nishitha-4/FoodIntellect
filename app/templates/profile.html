@@ -1,141 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-    <title>User Profile</title>
-
-    <link rel="stylesheet"
-          href="/static/css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1220">
+    <title>User Profile | FoodIntellect</title>
+    <link rel="stylesheet" href="/static/css/theme.css">
 </head>
 
 <body>
+    <main class="app-shell page-shell">
+        <header class="page-header">
+            <a class="back-link" href="/">← Home</a>
+            <span class="eyebrow">YOUR PREFERENCES</span>
+            <h1>User profile</h1>
+            <p>Personalize food insights around your dietary needs.</p>
+        </header>
 
-<div class="container">
+        <section class="panel form-panel">
+            <div class="panel-title">
+                <span class="card-icon icon-teal" aria-hidden="true">◎</span>
+                <div>
+                    <h2>Personal information</h2>
+                    <p>These details help tailor your experience.</p>
+                </div>
+            </div>
+            <form id="profileForm" class="profile-form">
+                <div class="field-group">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" placeholder="Name" required>
+                </div>
+                <div class="field-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="field-group">
+                    <label for="age">Age <span class="optional-label">Optional</span></label>
+                    <input type="number" id="age" placeholder="Age">
+                </div>
+                <div class="field-group">
+                    <label for="diet">Dietary preference</label>
+                    <input type="text" id="diet" placeholder="e.g. Vegetarian, vegan, gluten-free">
+                </div>
+                <div class="field-group field-full">
+                    <label for="allergies">Known allergies</label>
+                    <input type="text" id="allergies" placeholder="e.g. Peanuts, milk, soy">
+                    <small class="field-help">List any known food allergies, separated by commas.</small>
+                </div>
+                <div class="form-actions field-full">
+                    <button type="submit">Save profile <span aria-hidden="true">→</span></button>
+                    <p id="message" class="form-message" aria-live="polite"></p>
+                </div>
+            </form>
+        </section>
+        <footer class="app-footer">FoodIntellect <span>•</span> Your preferences, your choices</footer>
+    </main>
 
-    <h1>User Profile</h1>
+    <script>
+        document
+            .getElementById("profileForm")
+            .addEventListener("submit", async function (e) {
+                e.preventDefault();
 
-    <form id="profileForm">
+                const name =
+                    document.getElementById("name").value;
 
-        <input
-            type="text"
-            id="name"
-            placeholder="Name"
-            required
-        >
+                const email =
+                    document.getElementById("email").value;
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Email"
-            required
-        >
+                const age =
+                    document.getElementById("age").value;
 
-        <input
-            type="number"
-            id="age"
-            placeholder="Age"
-        >
+                const diet =
+                    document.getElementById("diet").value;
 
-        <input
-            type="text"
-            id="diet"
-            placeholder="Dietary preference"
-        >
+                const allergies =
+                    document.getElementById("allergies").value;
 
-        <input
-            type="text"
-            id="allergies"
-            placeholder="Allergies"
-        >
+                const params = new URLSearchParams({
 
-        <button type="submit">
-            Save Profile
-        </button>
+                    name: name,
+                    email: email,
+                    age: age,
+                    dietary_preference: diet,
+                    allergies: allergies
 
-    </form>
+                });
 
-    <p id="message"></p>
+                const response =
+                    await fetch(
+                        "/api/user/profile",
+                        {
+                            method: "POST",
 
-    <br>
+                            headers: {
+                                "Content-Type":
+                                    "application/x-www-form-urlencoded"
+                            },
 
-    <a href="/">
-        ← Home
-    </a>
+                            body: params
+                        }
+                    );
 
-</div>
+                const data =
+                    await response.json();
 
+                document.getElementById("message")
+                    .innerText =
+                    data.message ||
+                    "Profile saved";
 
-<script>
-
-document
-.getElementById("profileForm")
-.addEventListener("submit", async function(e) {
-
-    e.preventDefault();
-
-
-    const name =
-        document.getElementById("name").value;
-
-    const email =
-        document.getElementById("email").value;
-
-    const age =
-        document.getElementById("age").value;
-
-    const diet =
-        document.getElementById("diet").value;
-
-    const allergies =
-        document.getElementById("allergies").value;
-
-
-    const params = new URLSearchParams({
-
-        name: name,
-
-        email: email,
-
-        age: age,
-
-        dietary_preference: diet,
-
-        allergies: allergies
-
-    });
-
-
-    const response =
-        await fetch(
-            "/api/user/profile",
-            {
-                method: "POST",
-
-                headers: {
-                    "Content-Type":
-                        "application/x-www-form-urlencoded"
-                },
-
-                body: params
-            }
-        );
-
-
-    const data =
-        await response.json();
-
-
-    document.getElementById("message")
-        .innerText =
-        data.message ||
-        "Profile saved";
-
-});
-
-</script>
-
+            });
+    </script>
 </body>
 
 </html>

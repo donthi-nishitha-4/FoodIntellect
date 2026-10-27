@@ -15,24 +15,23 @@ def query_llm_with_provider(messages, temperature=0.1, max_retries=2, timeout=15
             "name": "google",
             "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
             "api_key": os.getenv("GEMINI_API_KEY"),
-            "models": ["gemini-3.6-flash"]
+            "models": ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
         },
         {
             "name": "groq",
             "base_url": "https://api.groq.com/openai/v1",
             "api_key": os.getenv("GROQ_API_KEY"),
-            "models": ["groq/compound", "groq/compound-mini", "qwen/qwen3.6-27b", "openai/gpt-oss-20b"]
+            "models": ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "mixtral-8x7b-32768"]
         },
         {
             "name": "openrouter",
             "base_url": "https://openrouter.ai/api/v1",
             "api_key": os.getenv("OPENROUTER_API_KEY"),
             "models": [
-                "liquid/lfm-2.5-2.6b:free",
-                "nvidia/nemotron-3.5-lightning:free",
-                "inclusionai/ling-3.0-flash-fin:free",
-                "poolside/laguna-s-2.1:free",
-                "minimax/minimax-m3:free"
+                "openai/gpt-4o-mini",
+                "meta-llama/llama-3.1-8b-instruct",
+                "google/gemini-2.0-flash-001",
+                "qwen/qwen3-235b-a22b"
             ]
         }
     ]

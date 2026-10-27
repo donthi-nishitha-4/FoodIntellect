@@ -19,7 +19,6 @@ class IngestionPipeline:
     def __init__(self, cleaner: Optional[OCRCleanerProtocol] = None):
         self.preprocessor = ImagePreprocessor()
         self.ocr_engine = OCREngine()
-        # Default to MockOCRCleaner during development to prevent blocking on Member 2
         self.cleaner: OCRCleanerProtocol = cleaner or MockOCRCleaner()
 
     def process_image(self, image_bytes: bytes) -> ProductData:
